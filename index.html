@@ -1,30 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="jorisvrr" />
-<link rel="manifest" href="/site.webmanifest" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>jorisvrr/webdev · Websites voor ondernemers</title>
-<meta name="description" content="jorisvrr/webdev. Zelfstandig websitemaker uit Leiden. Snelle, nette websites en webshops voor het MKB. Vraag vrijblijvend een offerte aan.">
+<title>Joris van Rijn (jorisvrr) - Websites voor ondernemers in Leiden</title>
+<meta name="description" content="Joris van Rijn (jorisvrr) is zelfstandig webdeveloper in Leiden. Ik bouw snelle, nette websites en webshops voor ondernemers in de Randstad. Vraag vrijblijvend een offerte aan.">
+<meta name="author" content="Joris van Rijn">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://jorisvrrwebdev.vercel.app/">
 <meta name="theme-color" content="#2f74d8">
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PG1ldGFkYXRhPjxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIj48cmRmOkRlc2NyaXB0aW9uPjxkYzpjcmVhdG9yPlJlYWxGYXZpY29uR2VuZXJhdG9yPC9kYzpjcmVhdG9yPjxkYzpzb3VyY2U+aHR0cHM6Ly9yZWFsZmF2aWNvbmdlbmVyYXRvci5uZXQ8L2RjOnNvdXJjZT48L3JkZjpEZXNjcmlwdGlvbj48L3JkZjpSREY+PC9tZXRhZGF0YT48aW1hZ2Ugd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHhsaW5rOmhyZWY9ImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBR1FBQUFCa0NBWUFBQUJ3NHBWVUFBQUFCR2RCVFVFQUFMR1BDL3hoQlFBQUNrbHBRME5RYzFKSFFpQkpSVU0yTVRrMk5pMHlMakVBQUVpSm5WTjNXSlAzRmo3ZjkyVVBWa0xZOExHWGJJRUFJaU9zQ01nUVdhSVFrZ0JoaEJBU1FNV0ZpQXBXRkJVUm5FaFZ4SUxWQ2tpZGlPS2dLTGhuUVlxSVdvdFZYRGp1SDl5bnRYMTY3KzN0KzlmN3ZPZWM1L3pPZWM4UGdCRVNKcEhtb21vQU9WS0ZQRHJZSDQ5UFNNVEp2WUFDRlVqZ0JDQVE1c3ZDWndYRkFBRHdBM2w0Zm5Td1Avd0JyMjhBQWdCdzFTNGtFc2ZoLzRPNlVDWlhBQ0NSQU9BaUV1Y0xBWkJTQU1ndVZNZ1VBTWdZQUxCVHMyUUtBSlFBQUd4NWZFSWlBS29OQU96MFNUNEZBTmlwazl3WEFOaWlIS2tJQUkwQkFKa29SeVFDUUxzQVlGV0JVaXdDd01JQW9LeEFJaTRFd0s0QmdGbTJNa2NDZ0wwRkFIYU9XSkFQUUdBQWdKbENMTXdBSURnQ0FFTWVFODBESUV3RG9ERFN2K0NwWDNDRnVFZ0JBTURMbGMyWFM5SXpGTGlWMEJwMzh2RGc0aUhpd215eFFtRVhLUkJtQ2VRaW5KZWJJeE5JNXdOTXpnd0FBQnI1MGNIK09EK1E1K2JrNGVabTUyenY5TVdpL212d2J5SStJZkhmL3J5TUFnUUFFRTdQNzlwZjVlWFdBM0RIQWJCMXYydXBXd0RhVmdCbzMvbGRNOXNKb0ZvSzBIcjVpM2s0L0VBZW5xRlF5RHdkSEFvTEMrMGxZcUc5TU9PTFB2OHo0Vy9naTM3Mi9FQWUvdHQ2OEFCeG1rQ1pyY0NqZy8xeFlXNTJybEtPNThzRVFqRnU5K2NqL3NlRmYvMk9LZEhpTkxGY0xCV0s4VmlKdUZBaVRjZDV1VktSUkNISmxlSVM2WDh5OFIrVy9RbVRkdzBBcklaUHdFNjJCN1hMYk1CKzdnRUNpdzVZMG5ZQVFIN3pMWXdhQzVFQUVHYzBNbm4zQUFDVHYvbVBRQ3NCQU0yWHBPTUFBTHpvR0Z5b2xCZE14Z2dBQUVTZ2dTcXdRUWNNd1JTc3dBNmN3UjI4d0JjQ1lRWkVRQXdrd0R3UVFnYmtnQndLb1JpV1FSbFV3RHJZQkxXd0F4cWdFWnJoRUxUQk1UZ041K0FTWElIcmNCY0dZQmlld2hpOGhna0VRY2dJRTJFaE9vZ1JZbzdZSXM0SUY1bU9CQ0poU0RTU2dLUWc2WWdVVVNMRnlIS2tBcWxDYXBGZFNDUHlMWElVT1kxY1FQcVEyOGdnTW9yOGlyeEhNWlNCc2xFRDFBSjFRTG1vSHhxS3hxQnowWFEwRDEyQWxxSnIwUnEwSGoyQXRxS24wVXZvZFhRQWZZcU9ZNERSTVE1bWpObGhYSXlIUldDSldCb214eFpqNVZnMVZvODFZeDFZTjNZVkc4Q2VZZThJSkFLTGdCUHNDRjZFRU1Kc2dwQ1FSMWhNV0VPb0pld2p0Qks2Q0ZjSmc0UXh3aWNpazZoUHRDVjZFdm5FZUdJNnNaQllScXdtN2lFZUlaNGxYaWNPRTErVFNDUU95WkxrVGdvaEpaQXlTUXRKYTBqYlNDMmtVNlErMGhCcG5Fd202NUJ0eWQ3a0NMS0FyQ0NYa2JlUUQ1QlBrdnZKdytTM0ZEckZpT0pNQ2FJa1VxU1VFa28xWlQvbEJLV2ZNa0tab0twUnphbWUxQWlxaURxZldrbHRvSFpRTDFPSHFSTTBkWm9selpzV1E4dWtMYVBWMEpwcFoybjNhQy9wZExvSjNZTWVSWmZRbDlKcjZBZnA1K21EOUhjTURZWU5nOGRJWWlnWmF4bDdHYWNZdHhrdm1VeW1CZE9YbWNoVU1OY3lHNWxubUErWWIxVllLdllxZkJXUnloS1ZPcFZXbFg2VjU2cFVWWE5WUDlWNXFndFVxMVVQcTE1V2ZhWkdWYk5RNDZrSjFCYXIxYWtkVmJ1cE5xN09VbmRTajFEUFVWK2p2bC85Z3ZwakRiS0doVWFnaGtpalZHTzN4aG1OSVJiR01tWHhXRUxXY2xZRDZ5eHJtRTFpVzdMNTdFeDJCZnNiZGk5N1RGTkRjNnBtckdhUlpwM21jYzBCRHNheDRQQTUyWnhLemlIT0RjNTdMUU10UHkyeDFtcXRacTErclRmYWV0cSsybUx0Y3UwVzdldmE3M1Z3blVDZExKMzFPbTA2OTNVSnVqYTZVYnFGdXR0MXorbyswMlByZWVrSjljcjFEdW5kMFVmMWJmU2o5UmZxNzlidjBSODNNRFFJTnBBWmJERTRZL0RNa0dQb2E1aHB1Tkh3aE9Hb0VjdG91cEhFYUtQUlNhTW51Q2J1aDJmak5YZ1hQbWFzYnh4aXJEVGVaZHhyUEdGaWFUTGJwTVNreGVTK0tjMlVhNXBtdXRHMDAzVE16TWdzM0t6WXJNbnNqam5Wbkd1ZVliN1p2TnY4allXbFJaekZTb3MyaThlVzJwWjh5d1dXVFpiM3JKaFdQbFo1VnZWVzE2eEoxbHpyTE90dDFsZHNVQnRYbXd5Yk9wdkx0cWl0bTYzRWRwdHQzeFRpRkk4cDBpbjFVMjdhTWV6ODdBcnNtdXdHN1RuMllmWWw5bTMyengzTUhCSWQxanQwTzN4eWRIWE1kbXh3dk91azRUVERxY1NwdytsWFp4dG5vWE9kOHpVWHBrdVF5eEtYZHBjWFUyMm5pcWR1bjNyTGxlVWE3cnJTdGRQMW81dTdtOXl0MlczVTNjdzl4WDJyKzAwdW14dkpYY005NzBIMDhQZFk0bkhNNDUybm02ZkM4NURuTDE1MlhsbGUrNzBlVDdPY0pwN1dNRzNJMjhSYjRMM0xlMkE2UGoxbCtzN3BBejdHUGdLZmVwK0h2cWErSXQ4OXZpTisxbjZaZmdmOG52czcrc3Y5ai9pLzRYbnlGdkZPQldBQndRSGxBYjJCR29HekEyc0RId1NaQktVSE5RV05CYnNHTHd3K0ZVSU1DUTFaSDNLVGI4QVg4aHY1WXpQY1p5eWEwUlhLQ0owVldodjZNTXdtVEI3V0VZNkd6d2pmRUg1dnB2bE02Y3kyQ0lqZ1IyeUl1QjlwR1prWCtYMFVLU295cWk3cVViUlRkSEYwOXl6V3JPUlorMmU5anZHUHFZeTVPOXRxdG5KMlo2eHFiRkpzWSt5YnVJQzRxcmlCZUlmNFJmR1hFblFUSkFudGllVEUyTVE5aWVOekF1ZHNtak9jNUpwVWxuUmpydVhjb3JrWDV1bk95NTUzUEZrMVdaQjhPSVdZRXBleVArV0RJRUpRTHhoUDVhZHVUUjBUOG9TYmhVOUZ2cUtOb2xHeHQ3aEtQSkxtblZhVjlqamRPMzFEK21pR1QwWjF4ak1KVDFJcmVaRVprcmtqODAxV1JOYmVyTS9aY2RrdE9aU2NsSnlqVWcxcGxyUXIxekMzS0xkUFppc3JrdzNrZWVadHlodVRoOHIzNUNQNWMvUGJGV3lGVE5HanRGS3VVQTRXVEMrb0szaGJHRnQ0dUVpOVNGclVNOTltL3VyNUl3dUNGbnk5a0xCUXVMQ3oyTGg0V2ZIZ0lyOUZ1eFlqaTFNWGR5NHhYVks2WkhocDhOSjl5MmpMc3BiOVVPSllVbFh5YW5uYzhvNVNnOUtscFVNcmdsYzBsYW1VeWN0dXJ2UmF1V01WWVpWa1ZlOXFsOVZiVm44cUY1VmZySENzcUs3NHNFYTQ1dUpYVGwvVmZQVjViZHJhM2txM3l1M3JTT3VrNjI2czkxbS9yMHE5YWtIVjBJYndEYTBiOFkzbEcxOXRTdDUwb1hwcTlZN050TTNLelFNMVlUWHRXOHkyck52eW9UYWo5bnFkZjEzTFZ2MnRxN2UrMlNiYTFyL2RkM3Z6RG9NZEZUdmU3NVRzdkxVcmVGZHJ2VVY5OVc3UzdvTGRqeHBpRzdxLzVuN2R1RWQzVDhXZWozdWxld2YyUmUvcmFuUnZiTnl2djcreUNXMVNObzBlU0RwdzVadUFiOXFiN1pwM3RYQmFLZzdDUWVYQko5K21mSHZqVU9paHpzUGN3ODNmbVgrMzlRanJTSGtyMGpxL2Rhd3RvMjJnUGFHOTcraU1vNTBkWGgxSHZyZi9mdTh4NDJOMXh6V1BWNTZnblNnOThmbmtncFBqcDJTbm5wMU9QejNVbWR4NTkwejhtV3RkVVYyOVowUFBuajhYZE81TXQxLzN5ZlBlNTQ5ZDhMeHc5Q0wzWXRzbHQwdXRQYTQ5UjM1dy9lRklyMXR2NjJYM3krMVhQSzUwOUUzck85SHYwMy82YXNEVmM5ZjQxeTVkbjNtOTc4YnNHN2R1SnQwY3VDVzY5ZmgyOXUwWGR3cnVUTnhkZW85NHIveSsydjNxQi9vUDZuKzAvckZsd0czZytHREFZTS9EV1EvdkRnbUhudjZVLzlPSDRkSkh6RWZWSTBZampZK2RIeDhiRFJxOThtVE9rK0duc3FjVHo4cCtWdjk1NjNPcjU5Lzk0dnRMejFqODJQQUwrWXZQdjY1NXFmTnk3NnVwcnpySEk4Y2Z2TTU1UGZHbS9LM08yMzN2dU8rNjM4ZTlINWtvL0VEK1VQUFIrbVBIcDlCUDl6N25mUDc4TC9lRTgvc3RSempQQUFBQUlHTklVazBBQUhvbUFBQ0FoQUFBK2dBQUFJRG9BQUIxTUFBQTZtQUFBRHFZQUFBWGNKeTZVVHdBQUFBSmNFaFpjd0FBTGlNQUFDNGpBWGlsUDNZQUFCRnpTVVJCVkhpYzdaMTVjQnpWbmNjL3IzdG1lbVoweS9JbENka1liR0dFdFJpVFlDQkFjR3hNdkJ3eENWdGtzNFFLZXhURkxsdTdrTjFObGlTd0JBaVlNeERpaXNHd0dId1JZM0M4WmZDQk1UNWt5eGUrOEEyUzcxTWF6WXptbnU2M2Y3VEdsc0dXWmlSMXovajRWRTNKeDNUL2Z0Ty9lYi8zdnUvOTNwT1FVbktCM0VISnRnTVhPSlVMQWNreExnUWt4N2dRa0J6RDZvQ3NBOTYzMk1ZNWhiQjRsQ1VOQ1lwZ0RmQmo0RXNyalowTFdOMUNqc2VTc0hSWDdGdkFGOERmV0d6dnJNZlNnUGpET2g2bjVNdW1KRTkvN05kMGc1bkFTMWJhUE51eE5DREhBa2xqMFVZL2QxMlp4N3E5Q1o3KzJNOWVuLzV2UUIwd3dFcmJaeXVXQnFSZnNkT1l1c0tIMUpPTUg1N0h6aU5KWGx3VVlObnUyTFhBVnVBdUsrMmZqVmdha0h5M0l0ZDhHV2IxcmxiRzFuandhZ0szVXpDbFBzUTc5U0d2SVhrZm1HQ2xEMmNiVm5mcWhoQ0NhU3VhNmUyRnNqd0ZweW9vTDFKWnVqdkdzL01EN0cvUi93UDRES2kwMkplekFzc0RjbEV2SjdQWCtFa21EVzY2ekV0VFNFZFZvS3BFNWFCZjU0VkZBVlo4R2JzUk00WGRZYkUvT1kvVkFaR0ZYcFhnb1JpTE52c1pWZTFDTjBCS01DVDBMVlJ3cVlLM1Y0V1l1anBVSUNWemdLY3Q5aW1uc1Q1bEFYaFVwaTczNFFBdTdlMGtIRGZGcUc1QW5pYm9YNlN5WkdlTUNRc0NIUExydndRV0FmMHM5aTBuc1R3Z0FBVWxUaFpzQ25MY0gyZnNNQysrc0lFUTVodWtxZVNwS2xYWjUwdnkzTUlBOVEyeDcyRUt5ZTliN0YvT1lYbktVb1RBN1JBY2IwM3l3ZW9XYXZ1cHVKMEMzVGoxallhRWZrVXFEa1V3dVM3RWpMWGhVbUFlOExqRlB1WVVOb3l5d0RBay9ZdWNURi9wQTJCNGxVWWdZbnpqemJvQkJXNUJ2MEtWUmR1alBMY3d3TkdnL2hqd0VWQm1zYTg1Z1MwQmtVQ3ZRZ2VyZG9YWXRpL011R0ZlV21QeVJObzY1UUlKRGdVR2xLbzBOaVdac0RESW1qM3hXekZUMkdpTC9jMDZsZ2RFYVh2b2lqRDdpMmtybXVtYkIyWDVDdkhrNldlYUpXWmcraGVwQ09DTkZhMzhlWDI0RDdBUWVOUmluN09LNVgySUVBSXB6V0JVbExxWXZjYVBvUnZjVU4zV3VYZHdzVzVBb1Z2UXQwQmwvdFlvTHk0S2NMelZlQktZQ3hSYjdIdFdzSzJGQUJSNEZIWWNqTEo0UzREUmw3bEk2bVpyNlBBRzdWTFk3bU5KSml3TXNINWYvRGJNRkhhVGhiNW5CZHY2a0JRRmJwVjNsL3R3Q2JpNG5TYnBpRlFLS3k5V01RekpwR1d0ek40UUxnZVdBUDlwamV2WndaYVVsWXFJbEZCZTRtVCtwZ0MrWUlLeFYzaHBhYWRKT2tNM29NaWowTHRBWmQ2V0tDOHZEdEljTnA0RlpnUDVWbjBJTzdFbFpiVnZBNXBUY05TZjVNTTFQb2FYcTdnY0F1T2JJK0F6MzFDQ1V6R0Y1STRqQ1NiTUQ3QmhmM3c4WmdxN3ZvZjl0eDFiVWxiN2tCZ1MraFk3bVZiWEFzQmZYYVRoajJZUWtiYTdTUWtWeFNvSlEvS25aYTNNMlJpcEFwWUREL2VRNzFuQkJxVnVQcnoyOUM1d1VMY3p4STREWWNiVmVtaU5ubDZUZEladVFMRkhvVmVld3R6TkVWNzVOSWcvWXJ3QXZBZTRlK0lEMkkwdDZ5RmZSMVZBMXlVelZ2Z296eGVVNXAxWmszUnFRSUpMRlZTVnFtdzduT0RaQlFFMkgwemNqWm5DcnVtZSsvWmo2N0QzeEQ5S3FDaDE4djdxRnFRaHVXR0l4K3pjdTJpa2ZRcUxKaVFUUHdzeWQzTmtFTEFLZUtqcjd0dVBMU25yZEJSNlZiWWVpTExraXdCamhtckUwOUFrbmFFYlVPSlZLTTFUbUxNeHdtdWZCUWxHalZlQXFZQ3ptN2UzaGF5a3JCVDVicFdweTV2UkZCaFk1aUNTNkg3UjNva1VWcUt5K1VDQ1p4WUUySG9vOGJmQUZ1Q3FiaHV3R051SHZTbFNtdVNqalVIOHJRbHVxY2s3Wloya084aTJWMldKU2pndWVlMnpJUE8yUklaZ2xyWSswSDBMMXBHMWxBWGdkZ29PdHlTWXM3YUZxeXRWbkFvWmFaTE8wQTBvOVNvVWV4Um1iNGd3Y1drcm9iaWNDUHd2ZExuTHNoUjdVdFlaTXBFaG9VK1JnK2wxNWpwSmJhVkdJRU5OMHFrRDBoU2pGNVdvYk5nZjU1bjVBWFljU2R3SGJBYUc5YWl4SGlBcm82ejI5Q2wwc254SGlOMkhJb3lyOVJMc29pYnBpSlFPdXFoRUpSZzFlUFhUSVBPM1JtdUFUY0Q5UFd1dGUxaWZzcFNPUjArcUF2R2taR2FkajhwQ1FiRlhJYUZiNDR4dVFLODhoVUtQd3F6MVlWNWYza28wSVNjRGs2eXhtRGxaSFdYQlNVMHlxNzRGcE9UNndaNU8xMG02NVpBMCs2N0tFcFcxZTh3VXR2dFk4aCtCejRHaEZwbE5tNnluTElBaXI4cVdmUkdXYmcwdzluS3R5Nm85WFU2a3NGSVZYOFRnOTR1RExOb2V2Ukp6YVB4VFM0MTNndFVCMGRNSkNJQlhVNWk2d29kSGhhclNudEVrbmFFYlpubHJ2aWFZdVRiTTVCV3RTaXdwM3dZbVdtNzhER1IxbEpWQ1NpZ3ZkVEh2OHdEQmNKSXhOZDRlMHlTZE9pakI0ekpUV0gyam1jSytPcDU4QUZPekRMYmVnMVBKbWpEOE9oNm40S0F2d2R4MUxWeFQ1VUFSNXNPeWcxUUtxeXBWYVE0WnZMdzR5S2M3b2xkaHByQWYyK09GaVEwQlNlOXJia2pvWGVoZzJncFRrd3lyMUFqMnNDYnBETjB3cTJHOExzRzBOV0hlV2hseUpYUTVEWGpGTGg5c1dxQktqejVGVHBadWI2WGhjSVJ4dzd3RUlqMnZTVHJEa09CMUNTcUtWVlorWlc2WjJOT2NmQWhZQ1F5MDJuNU9qTEpTT0JTSXhpV3o2bHNZVUN3bzlBaVNGbW1TanBBU2hEQ0Y1TkZXZ3hjL0NiSjBWMndrNWhyTEQ2MjBiWDFBRkpIMnRIcEtrN3kzcWdXUVhIZXBxVW15aFNHaFQ3NkN4eUY0ZDNXSUtlYXVyMW5BODFiWnpLbVVCVkNjcDdLaE1jeks3VUhHMXJpSkp1eFBXKzNSSlhqYnRrd3MyeDNqR1hQWDF5UEFVaXpZOVdWUHlzcHd0T1IyS1V5djg1SHZNS2ZRN2RBa0hYRml5MFNKeXFHVHU3NXV3SUpkWHphTnN0Si9vTEl0YmMxWkZ5QVVTVEttSmc5ZnlCNU4waG1uM2ZVRmM0RGY5WlFOMnlzWDA4SHJVdGpYRkdmZTUzNnVHK2hBbktaeUpWdWNzdXRyVjR3Sjh3TWM5T3UvQUJZRC9idDcvNXdhWloyNFNFSlp3VWxOVWxQdXNsMlRkRVQ3RkxhdlJlZjVoUUZXTnNSdXhreGhmOTJkZStlTU1QdzYvWXFkTFA0aXlONmpVY2JWNXVIUGdpYnBERU5DdjBJRmh5cDRxeTdFOUxYaFl1RC9nQ2U2ZXMrY0cyV2xjQ2dRamh2TXF2Y3hxRVJRNE02T0p1bU1wQUY1TGtIZkFvVUZXeU04OVpHZnhxYmtyNEVGUU45TTc1ZVRveXhvMHlRbExtYTJhWkpyTC9IUWNwcHRjRDFKYXJ1MmJrQkNsOFNTa2toQzBocVQrQ01HdnJEQjhWYURZNjBHUjRJNmh3TTZ4NEk2VFNHRFVGelN0MUJsVDdQT0h6OXJaY3ZCeEJpZ0lWTWZIQlo4cnZZWWlraGZHSDZka255Vnp4c2lyTjdaeXRpYUFoWjhFVUxrS3hsMThBTHpXNXpRSmJvRTNaQVlocWt2REFsU1NvdzJaYTRLZ2FxWXJkUGxFTGhVZ2NzaDBCem11cnpiMGZaeUNieE84NWdRajB2Z2NaNzhlNTZta05BbERrVkl1bEJJWVhsQVJEZmJvTXNobUY3bjQ2VWhCWlFYTzRnbUpKcWo0ODhwQkNSMWFJMFpSQktTQXJkQ29kdDh1RzZIUUhPWUQ4L3ROQittcDkyRFRmM1ozZTQ5bWtORUZJRWZDQUIrb0FYd0FjMUFVOXZQMU12WDl2K3A5MlNFRFMyazZ4ZExDWldsVGo1YzYrZXBlM1JHWCs1bFduMlEvb1hxTjFxZEFCSUdCS01HMFlTa3lLTlFVKzdrV3dOYzFQUjNva3VrQXNjZHFsQXhIMnJxbFhxd3AzdTFjUExCQm9GRTF6OU5ldGlTc3Jvek92SnFDanNQUjVpL3djLzRrYVZNWFhXeVN4SkFYSmNFbzJhK0w4MVRHRkhsWWtTVmswRmxEa0RRMEd6d3dhWTRQN3BTazhEZG1MTzI4ZTUrTUt1d1BtVjFjNmdxSmZUS2R6Q3R6c2Y0a2FYVWxMdllkZFQ4b2laMFNWbSt3cldEWEl5b2NqR2cxRUhTZ0wwK2crbnI0dFExeE5sNVJLZWhTVWRUVVc0ZnB2MHo1c2xET1lzdEtVdDBvNFpFQXYyTG5TemFFbVRYZ1FoamFyeHNPZGpDMktGdXJxcHlVbEhzSUphRWhpYUROMWRGV2RXWW9LRkpSemNrSlI2RmltS0ZBcmZnN2ZvSW95OXozZTF4aXU5aTdrM01TV3hMV1YwYWNyVGhkZ2xhanNSNGUxa3pUOTVUd2YvY1ZrU1JSMkhiWVoyL2JJbFEzNWhnbjA5SFNyTjB0S0pJT1dXNnBjUXIySDVZWjhhNktEOGI2WG1kTEt5VnAwdk9weXlIS3RpNEo4SjNSaFR6a3h0NkFiQ3FNY2tyUzhJa0RZbEFVT0lWVkJhYmh3eWsrcGYyUTJQZGdNb1NoUm5yb3R4MmhYWnA3M3psWHVDZDdubG1EYllJd3d3bmZBR3pOYW1LWUdOam1KR0Q4L2o0MGNFTXJYRC9GUGpYZkUzZ0N4dFVGS3RVRnB0cjRIUmlJbDhUK0NPU3QxWkZ3TVkxOGt6Snlia3NJVUFvc0tFeHpNMVhGTER3VjBQSTA1UkhNYi9WcjQydWRzbWJoN2c0RWpEU3pvTzZZVmFWek4wY1kvY3h2Umo0VGNhTzJZQXRjMW1aaENRVnZ3ME5FY1lOTCtMai94NkN5eUVlNGVSSmN3WXcrYzVhalZBYWh3NjB4NldhUDErdmk0QjU3Rk5CUmpld0FSdlcxRWs3SXFtT2VFTmptQjllVTh6Yy83b1VSZkFnOE9MWDN2clVqWmU0dUtLL2c2WlErblhBaGpRTEY1YnNpck42VDBJQUw2ZjdRZXpDbHBTVnpnTVRiWVZ4R3h2RC9PUTd2Zmp6dzVlQXVWWGdkR1dkalVMdzBXMVhhRFNGTXB1V1Y0VFpuMHcyVzhuOTJGRGFrd21XMS9hZU9NcXZJeWVFbWVNM05ZYTVmMVFaN3o1ME1aZ1ZnMjkxY05salk0ZTZ1TGlYU2lDYWZ1cEtyV0dzMzVmazQ2MXhnTmZUdnRnR2JCcGxuZmtyckFoeittUHpuakFQanUzRDVBY0dBb3dIWm5SeTd6VmVsOWh3NjFBWGh3TUdtYzZabGVVTDNsb1ZJYUV6R2hpWjJkWFdrZFZSbGlJZ2xwUjhzVGZDdzdmMzQ3Vy9yd0lZQjN5WTV2MGZ1MzJZUmxtK2tsRmxpcFJtMWZ0WHgzVm1ybzhDdkpuMnhSYVR0VkdXb2tBa0x0bTZMOEtqZC9YbmhYc3JBVVpobnErWUxuL3BuYThjK0Y2MWk0UCt6RnFKZWR5VHdyUzFVWHhoWXlqd293enNXb1o5d3JBZHFpSUlSUTIySDRqdzIzc3FlUEtlQ2gyNER2aTBDemFlR2wrcjRYYUtqTGJDU2N6VDZwcENCbS9YUnlHTGUwTGFZM3ZLVWhWQklLS3o4MUNNNSs2OWlGL2QxVDhDZkJ0eldyd3J2REdvVEExZlA4akpvWUNlMFloTE44ektrUTgzeGRqVHJKY0JQKytpRHoyR1BTbXJiZXBFVlFRdG9TUmZIb254NnM4dTR1ZTM5L1VEVndQcnUyRWpBZnorQjdXYWVXUmdobE0wbWdPU3VreUp4ZDhCbm03NDBtMXNxOHRTVldnS0p0bHpQTTZrZnhyQXY5emE1eGd3QXJPV3FidThjSFdWa3hGVlRvNEVNNnR5VEluRlQzYkUyYkEvNmNEQ1F1cDBzS1g2M2FHYUp6WWM4U2RpN3o1ME1mOHdxdXdnTUp5ZSt5VmhUY0RVTzRacEJEUFFKQ2xVeGR6Qk5XbEZHT0JCb0tLSC9Nb1l5d1BpY2dpT05zVUpSZ3pmN0VjdTBlNjVyblF2WmpBTzlMQ3RKMFpWdTdpOG40UG1rTXhvL3N3OEkxaGh6ZDRraTNiRUlZdjcxaTFYNnZ1YTRxQnpZTjR2THkzNS92Q2lCdUJLNEtnRnRuYXFnaVhqYWx3YzcySnhkcTg4d1pzckl5UU54cEdsazRPc0RraGgvMkluODM5YlhYN2owSUxkUUMxZEtJM0pnTitNcTlHb0tsRUl4akpMWFNteHVQT296cXpQbzlEeHRJMWxXQjJRd0pqYVFtNFpWcmdacUFGYUxiYTNMRjhUMjI2NVRPTlFoa0lSMnJabkZ5bTh1eVpLSUNwcnljSnYvTEU2SURPQSt6QkhVM2FWM2p4K1o2MUdhWjRnbXVHSkVCSW84Z2lPQmcybTFFY0EvbVNGZ3gxaGRVRDh3QlFnYWJHZDlyelhyMUE1K3QzQkxnNjJaTjVLVExHb01IdGpqUDB0ZWo5c1ByUHhYUDF0MFJQRzEybzRWVUd5Qy9YWmJxY2dscFM4WVlyRjV3QlhEL3QzUnM3VmdQeWh1cThqZHQwZ0o0ZjhtWSs0VW1KeHdiWTRXdzRtTmVBWlM3dzhEZWRxUUdMQXhEdHJOZUs2N05KMnVGUUYvQ1N6bGZ3N1hkanIwUlhPMVlBQVBETnlvSlBobFE2T3RXWisvcFlob2FKSW9iNHh3Znh0Y1lBL1d1RGpOemlYQTNJRW1IWDdNSTJXTG15SFU0UzVyeVFRa1V4YUVTYWFsSGNCUTZ4dzlCUzdWaHZJTW8rUHJ0YW83cVBpQzZlWHQxSkx5ZzFOT3MxaGc3Lzd0cHRmM0pLSFF4RmZZVzVOc0JRaGMyVy9zWFVzbjdZMmV2MUxuNGFwN3FPZThjZ25SVUFrSVRua055aHdDMjRhN09JSHRScVg5M1BzeFN3WGVoVWJodS9uUTBCRytTUHlrL3ZlOFFPY0tEdE5vUWdJeFNXSEF3WWxYb1diQnp1NXM5Yk5rRDdxYnVBbHpJbEcyM1RVK1JBUWdKMnZMUTBQbnJJNnl1RGVaaXRSQkxUR0pJZURCcjN6RkVaVnU3aXpWbU5RTDNVYlptSGVHOWx3OUh3SnlMMzdXL1FwOTA4TlVPSlJpQ1lsUndJR2ZRc1Z4bFM3dUtOV282cEUzWWdaaUNuWmRQUjhDUWhBMHhNZmhVb25MZzl6N1VBbnR3elZ1R09ZUm5tUnNnWjRBWmlaYlFmQit2MGh1Y1R6ZHd6VG5uWTU0UDZSSHZvVUtIV1l5N1VmWk51eDlweFBMVVFEMW1KMjBML0dQQUlqNXppZkFuSldjSzRMdzdPT0N3SEpNUzRFSk1lNEVKQWM0LzhCNEF3TWFONFVvNE1BQUFBQVNVVk9SSzVDWUlJPSI+PC9pbWFnZT48c3R5bGU+QG1lZGlhIChwcmVmZXJzLWNvbG9yLXNjaGVtZTogbGlnaHQpIHsgOnJvb3QgeyBmaWx0ZXI6IGNvbnRyYXN0KDEpIGJyaWdodG5lc3MoMSk7IH0gfQo8L3N0eWxlPjwvc3ZnPg==">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 
 <!-- Open Graph / Twitter -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="jorisvrr/webdev · Websites voor ondernemers">
-<meta property="og:description" content="Snelle, nette websites en webshops voor het MKB. Maak meteen een offerte in je browser.">
+<meta property="og:url" content="https://jorisvrrwebdev.vercel.app/">
+<meta property="og:title" content="Joris van Rijn (jorisvrr) - Websites voor ondernemers">
+<meta property="og:description" content="Zelfstandig webdeveloper uit Leiden. Snelle, nette websites en webshops voor het MKB.">
 <meta property="og:site_name" content="jorisvrr/webdev">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:image" content="https://jorisvrrwebdev.vercel.app/web-app-manifest-512x512.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="jorisvrr/webdev">
-<meta name="twitter:description" content="Websites voor ondernemers. Maak meteen een offerte.">
+<meta name="twitter:title" content="Joris van Rijn (jorisvrr) - Websites voor ondernemers">
+<meta name="twitter:description" content="Zelfstandig webdeveloper uit Leiden. Websites en webshops voor het MKB.">
+<meta name="twitter:image" content="https://jorisvrrwebdev.vercel.app/web-app-manifest-512x512.png">
 
 <!-- Structured data -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"jorisvrr/webdev","description":"Zelfstandig websitemaker uit Leiden. Snelle, nette websites en webshops voor het MKB.","areaServed":"NL","slogan":"Websites voor ondernemers.","email":"jorisvrr@gmail.com","telephone":"+31638032065","founder":{"@type":"Person","name":"Joris van Rijn"},"address":{"@type":"PostalAddress","addressLocality":"Leiden","addressCountry":"NL"}}
+{"@context":"https://schema.org","@graph":[
+{"@type":"Person","@id":"https://jorisvrrwebdev.vercel.app/#joris","name":"Joris van Rijn","alternateName":"jorisvrr","jobTitle":"Webdeveloper","description":"Zelfstandig webdeveloper uit Leiden die snelle, nette websites en webshops bouwt voor ondernemers.","url":"https://jorisvrrwebdev.vercel.app/","email":"jorisvrr@gmail.com","telephone":"+31638032065","address":{"@type":"PostalAddress","addressLocality":"Leiden","addressRegion":"Zuid-Holland","addressCountry":"NL"},"knowsAbout":["webdevelopment","websites","webshops","SEO","webdesign","chatbots"],"sameAs":["https://github.com/jorisrijn-hash"]},
+{"@type":"WebSite","@id":"https://jorisvrrwebdev.vercel.app/#website","url":"https://jorisvrrwebdev.vercel.app/","name":"jorisvrr/webdev","inLanguage":"nl-NL","publisher":{"@id":"https://jorisvrrwebdev.vercel.app/#joris"}},
+{"@type":"ProfessionalService","name":"jorisvrr/webdev","image":"https://jorisvrrwebdev.vercel.app/web-app-manifest-512x512.png","description":"Zelfstandig webdeveloper uit Leiden. Snelle, nette websites en webshops voor het MKB.","areaServed":"NL","slogan":"Websites voor ondernemers.","email":"jorisvrr@gmail.com","telephone":"+31638032065","url":"https://jorisvrrwebdev.vercel.app/","priceRange":"vanaf €250","founder":{"@id":"https://jorisvrrwebdev.vercel.app/#joris"},"address":{"@type":"PostalAddress","addressLocality":"Leiden","addressCountry":"NL"}}
+]}
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -131,12 +143,12 @@ a:hover{text-decoration:underline}
   box-shadow:0 16px 40px rgba(20,50,100,.3);animation:menupop .12s ease;color:#1f2730;
 }
 @keyframes menupop{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
-.mb-menu button{display:flex;width:100%;align-items:center;justify-content:space-between;gap:18px;background:none;border:0;text-align:left;padding:7px 10px;border-radius:6px;font-size:13.5px;color:var(--ink)}
-.mb-menu button:hover{background:var(--accent);color:#1A1712}
-.mb-menu button .k{font-family:var(--mono);font-size:11px;opacity:.55}
-.mb-menu button:hover .k{opacity:.8;color:#1A1712}
-.mb-menu .div{height:1px;background:var(--line);margin:5px 6px}
-.mb-menu .head{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--faint);padding:6px 10px 3px}
+.mb-menu button{display:flex;width:100%;align-items:center;justify-content:space-between;gap:18px;background:none;border:0;text-align:left;padding:7px 10px;border-radius:6px;font-size:13.5px;color:#2a3540}
+.mb-menu button:hover{background:var(--accent);color:#fff}
+.mb-menu button .k{font-family:var(--mono);font-size:11px;color:#6a7682}
+.mb-menu button:hover .k{color:#eaf2ff}
+.mb-menu .div{height:1px;background:rgba(0,0,0,.12);margin:5px 6px}
+.mb-menu .head{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#8a96a2;padding:6px 10px 3px}
 
 /* ============================ DESKTOP ICONS ============================ */
 #desktop{position:absolute;inset:var(--menu-h) 0 0 0;z-index:10}
@@ -309,6 +321,22 @@ textarea{resize:vertical;min-height:84px;line-height:1.5}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
+<noscript>
+<main style="max-width:680px;margin:40px auto;padding:0 20px;font-family:system-ui,sans-serif;color:#111;line-height:1.6">
+<h1>Joris van Rijn - jorisvrr/webdev</h1>
+<p>Ik ben Joris van Rijn, zelfstandig webdeveloper uit Leiden. Ik bouw snelle, nette websites en webshops voor ondernemers in de Randstad: van ontwerp tot online, met &eacute;&eacute;n aanspreekpunt en zonder gedoe.</p>
+<h2>Wat ik voor je doe</h2>
+<ul>
+<li>Nieuwe website: een strakke, snelle site die past bij jouw bedrijf.</li>
+<li>Webshop: producten online verkopen met een duidelijke winkelmand en veilig afrekenen.</li>
+<li>Logo &amp; huisstijl, teksten en online reserveren.</li>
+<li>Beter gevonden in Google (lokale SEO) voor meer aanvragen.</li>
+<li>Chatbot / online assistent, onderhoud en hosting.</li>
+</ul>
+<h2>Contact</h2>
+<p>WhatsApp of bellen: +31 6 38032065. E-mail: jorisvrr@gmail.com. Gevestigd in Leiden, werkzaam in de hele Randstad.</p>
+</main>
+</noscript>
 <style>
 /* ============================ APP: ABOUT ============================ */
 .about-hero{display:flex;gap:22px;align-items:flex-start;margin-bottom:8px}
@@ -1675,11 +1703,12 @@ function init(){
   });
 
   runBoot(()=>{
-    // open one clear welcome window so a visitor knows exactly what to do
     if(!isMobile()){
       const W=window.innerWidth, H=window.innerHeight;
-      const w=560, h=Math.min(560,H-150);
-      openApp('welcome',{left:Math.round((W-w)/2), top:Math.round((H-h)/2)-10, w, h});
+      openApp('services',{left:Math.round(W*0.46), top:Math.round(H*0.10), w:Math.min(690,Math.round(W*0.40)), h:Math.min(600,H-200)});
+      openApp('projects',{left:Math.round(W*0.50), top:Math.round(H*0.62), w:600, h:330});
+      openApp('welcome', {left:Math.round(W*0.155), top:Math.round(H*0.28), w:560, h:Math.min(560,H-160)});
+      focusWin('welcome');
     } else openApp('welcome');
     toast('Welkom \u00b7 typ \u2018help\u2019 in Terminal voor de techneuten');
   });
