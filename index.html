@@ -154,11 +154,11 @@ img{max-width:100%;display:block}
 @media (hover:hover) and (pointer:fine){#menubar .sound:hover{background:var(--accent);color:#fff}}
 
 /* layout rhythm: each section is a window floating on the desktop */
-.stage{display:grid;gap:26px;padding:30px 22px 14px;max-width:1200px}
+.stage{display:grid;gap:26px;padding:30px clamp(18px,2.6vw,40px) 16px;max-width:1900px;width:100%}
 /* x-axis variation: vary window width + left/right alignment so the desktop shows through (desktop only) */
 @media (min-width:861px){
-  .w-narrow{width:min(80%,840px)}
-  .w-mid{width:min(90%,1000px)}
+  .w-narrow{width:min(86%,1240px)}
+  .w-mid{width:min(94%,1620px)}
   .off-l{justify-self:start}
   .off-r{justify-self:end}
   .off-c{justify-self:center}
@@ -232,6 +232,7 @@ img{max-width:100%;display:block}
 .why-row .icon{width:46px;height:46px;border-radius:11px;background:var(--accent-tint);color:var(--accent-strong);padding:11px}
 .why-row h3{font-size:1.2rem;margin-bottom:6px}
 .why-row p{color:var(--body);font-size:1rem}
+.why-row>div{max-width:80ch}
 .roi{margin-top:26px;background:var(--accent);color:#fff;border-radius:var(--r);padding:24px 26px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
 .roi .icon{width:46px;height:46px;border-radius:11px;background:rgba(255,255,255,.16);color:#fff;padding:11px;flex:none}
 .roi b{color:#fff;font-family:var(--display)}
