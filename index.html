@@ -154,7 +154,15 @@ img{max-width:100%;display:block}
 @media (hover:hover) and (pointer:fine){#menubar .sound:hover{background:var(--accent);color:#fff}}
 
 /* layout rhythm: each section is a window floating on the desktop */
-.stage{display:grid;gap:26px;padding:30px 0 10px}
+.stage{display:grid;gap:26px;padding:30px 22px 14px;max-width:1200px}
+/* x-axis variation: vary window width + left/right alignment so the desktop shows through (desktop only) */
+@media (min-width:861px){
+  .w-narrow{width:min(80%,840px)}
+  .w-mid{width:min(90%,1000px)}
+  .off-l{justify-self:start}
+  .off-r{justify-self:end}
+  .off-c{justify-self:center}
+}
 .icon{display:inline-grid;place-items:center;flex:none}
 .icon svg{width:100%;height:100%;stroke-width:2}
 
@@ -371,17 +379,12 @@ img{max-width:100%;display:block}
 @media (hover:hover) and (pointer:fine){.dock-item:hover .tip{opacity:1;transform:translateX(-50%) scale(1)}}
 /* mobile dock = simple action bar */
 @media (max-width:680px){
-  :root{--dock-h:66px}
-  #dock{left:12px;right:12px;bottom:12px;transform:none;justify-content:space-between;align-items:center;border-radius:16px;padding:8px 10px;gap:8px}
-  .dock-item{height:46px;border-radius:12px}
-  .dock-item.label{width:auto;flex:1;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:9px;font-family:var(--display);font-weight:600;font-size:15px;line-height:1;padding:0 10px;white-space:nowrap}
-  .dock-item.label svg{width:20px;height:20px;margin:0;flex:none}
-  .dock-item.label span{position:static;line-height:1;display:inline;white-space:nowrap}
-  .dock-item.icon-only{width:46px}
+  :root{--dock-h:72px}
+  #dock{bottom:12px;padding:8px 10px;gap:8px}
+  .dock-item{width:48px;height:48px;border-radius:13px}
   .dock-item .tip{display:none}
 }
 .dock-item.label span{display:none}
-@media (max-width:680px){.dock-item.label span{display:inline}}
 
 /* ============ reveal (additive; visible by default) ============ */
 .rv{opacity:1;transform:none}
@@ -472,7 +475,7 @@ img{max-width:100%;display:block}
   </section>
 
   <!-- ============ WAAROM (dark editor window for contrast/variety) ============ -->
-  <section class="win dark rv-init" id="waarom" aria-labelledby="why-h">
+  <section class="win dark rv-init w-narrow off-l" id="waarom" aria-labelledby="why-h">
     <div class="win-bar"><span class="traffic"><i></i><i></i><i></i></span><span class="win-title">waarom-een-website.txt — nano</span><span></span></div>
     <div class="win-body">
       <div class="term-prompt"><span class="path">joris@jorisOS</span> ~ % <span class="cmd">cat waarom-een-website.txt</span><span class="caret" aria-hidden="true"></span></div>
@@ -502,7 +505,7 @@ img{max-width:100%;display:block}
   </section>
 
   <!-- ============ WAT JE KRIJGT ============ -->
-  <section class="win rv-init" id="wat" aria-labelledby="wat-h">
+  <section class="win rv-init w-mid off-r" id="wat" aria-labelledby="wat-h">
     <div class="win-bar"><span class="traffic"><i></i><i></i><i></i></span><span class="win-title">inhoud.app</span><span></span></div>
     <div class="win-body">
       <div class="feat-grid">
@@ -607,7 +610,7 @@ img{max-width:100%;display:block}
   </section>
 
   <!-- ============ WERKWIJZE ============ -->
-  <div class="row2">
+  <div class="row2 w-mid off-l">
   <section class="win rv-init" id="werkwijze" aria-labelledby="ww-h">
     <div class="win-bar"><span class="traffic"><i></i><i></i><i></i></span><span class="win-title">werkwijze.txt</span><span></span></div>
     <div class="win-body">
@@ -640,7 +643,7 @@ img{max-width:100%;display:block}
   </div>
 
   <!-- ============ FAQ ============ -->
-  <section class="win rv-init" id="faq" aria-labelledby="faq-h">
+  <section class="win rv-init w-narrow off-r" id="faq" aria-labelledby="faq-h">
     <div class="win-bar"><span class="traffic"><i></i><i></i><i></i></span><span class="win-title">veelgestelde-vragen.txt</span><span></span></div>
     <div class="win-body">
       <div class="shead" style="text-align:center;max-width:none;margin-bottom:26px"><h2 id="faq-h">Veelgestelde vragen</h2></div>
@@ -656,7 +659,7 @@ img{max-width:100%;display:block}
   </section>
 
   <!-- ============ FINAL CTA ============ -->
-  <section class="win final rv-init" id="contact" aria-labelledby="cta-h">
+  <section class="win final rv-init w-mid off-c" id="contact" aria-labelledby="cta-h">
     <div class="win-bar" style="background:#0c1d3c;border-color:rgba(255,255,255,.1)"><span class="traffic"><i></i><i></i><i></i></span><span class="win-title" style="color:rgba(255,255,255,.6)">contact</span><span></span></div>
     <div class="win-body">
       <h2 id="cta-h">Klaar voor een site die klussen oplevert?</h2>
