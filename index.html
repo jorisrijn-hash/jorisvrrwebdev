@@ -408,10 +408,48 @@ img{max-width:100%;display:block}
 @keyframes shine{0%,55%{transform:translateX(-130%)}100%{transform:translateX(130%)}}
 .dec{font-variant-ligatures:none}
 @media (prefers-reduced-motion:reduce){.tier .badge::after{display:none}}
+/* ---- jorisOS boot loader ---- */
+#boot{position:fixed;inset:0;z-index:300;display:grid;place-items:center;
+  background:radial-gradient(120% 80% at 50% 24%, #5a9ef0, transparent 60%), linear-gradient(180deg,#3f86dc,#1f5cc0);
+  transition:opacity .55s var(--ease-out), visibility .55s;
+  animation:bootfade .6s var(--ease-out) 2.8s forwards}
+#boot.done{opacity:0;visibility:hidden;pointer-events:none;animation:none}
+@keyframes bootfade{to{opacity:0;visibility:hidden}}
+.boot-inner{display:flex;flex-direction:column;align-items:center;gap:22px;transform:translateY(-3vh);animation:bootpop .6s var(--ease-out) both}
+@keyframes bootpop{from{opacity:0;transform:translateY(-3vh) scale(.98)}to{opacity:1;transform:translateY(-3vh) scale(1)}}
+.boot-logo{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,4.4vw,2.5rem);color:#fff;letter-spacing:-.02em;display:flex;align-items:center;gap:13px}
+.boot-logo b{color:#cfe2ff}
+.boot-logo .sq{width:22px;height:22px;border-radius:7px;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.22)}
+.boot-bar{width:220px;max-width:60vw;height:4px;border-radius:4px;background:rgba(255,255,255,.28);overflow:hidden}
+.boot-bar i{display:block;height:100%;width:0;background:#fff;border-radius:4px;animation:bootfill 1.25s var(--ease-out) forwards}
+@keyframes bootfill{0%{width:0}72%{width:84%}100%{width:100%}}
+.boot-text{font-family:var(--mono);color:rgba(255,255,255,.85);font-size:12.5px;letter-spacing:.04em}
+@media (prefers-reduced-motion:reduce){
+  #boot{animation:bootfade .3s ease .25s forwards}
+  .boot-inner{animation:none;opacity:1}
+  .boot-bar i{animation:none;width:100%}
+}
+
+/* ---- full-screen hero + coordinated entrance ---- */
+.hero-full{min-height:calc(100vh - var(--menu-h) - 36px);min-height:calc(100dvh - var(--menu-h) - 36px);display:flex;flex-direction:column}
+.hero-full .win-body{flex:1;display:flex;align-items:center;width:100%}
+.hero-full .hero-grid{width:100%}
+.hero-full.armed .he{opacity:0;transform:translateY(18px)}
+.hero-full.armed .preview{opacity:0;transform:translateY(24px)}
+.hero-full.go .he{opacity:1;transform:none;transition:opacity .6s var(--ease-out), transform .6s var(--ease-out)}
+.hero-full.go .preview{opacity:1;transform:none;transition:opacity .7s var(--ease-out) .12s, transform .7s var(--ease-out) .12s}
+@media (max-width:760px){.hero-full .preview{display:none}}
 </style>
 </head>
 <body>
 <canvas id="bg" aria-hidden="true"></canvas>
+<div id="boot" aria-hidden="true">
+  <div class="boot-inner">
+    <div class="boot-logo"><span class="sq"></span>jorisvrr<b>/webdev</b></div>
+    <div class="boot-bar"><i></i></div>
+    <div class="boot-text">jorisOS 1.0 — laden…</div>
+  </div>
+</div>
 
 <!-- ============ MENUBAR ============ -->
 <nav id="menubar" aria-label="jorisOS menu">
@@ -431,23 +469,23 @@ img{max-width:100%;display:block}
 <main class="wrap stage" id="top">
 
   <!-- ============ HERO ============ -->
-  <section class="win" aria-labelledby="hero-h">
+  <section class="win hero-full" aria-labelledby="hero-h">
     <div class="win-bar"><span class="traffic"><i></i><i></i><i></i></span>
       <span class="win-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="M6 8h.01"/><path d="M10 8h.01"/><path d="M14 8h.01"/></svg>jorisvrr — webdev</span><span></span></div>
     <div class="win-body hero">
       <div class="hero-grid">
         <div>
-          <span class="eyebrow"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg></span><span data-decrypt>Webdeveloper uit Leiden</span></span>
+          <span class="eyebrow he"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg></span><span data-decrypt>Webdeveloper uit Leiden</span></span>
           <h1 id="hero-h" data-split>Een website die <em>klussen oplevert.</em></h1>
-          <p class="lead">Voor loodgieters, elektriciens, dakdekkers, hoveniers en andere vakmensen in de Randstad. Snel online, goed vindbaar in Google, en klanten bellen je direct. Vanaf 250 euro.</p>
-          <div class="hero-cta">
+          <p class="lead he">Voor loodgieters, elektriciens, dakdekkers, hoveniers en andere vakmensen in de Randstad. Snel online, goed vindbaar in Google, en klanten bellen je direct. Vanaf 250 euro.</p>
+          <div class="hero-cta he">
             <a class="btn btn-wa magnet" rel="noopener" href="https://wa.me/31638032065?text=Hoi%20Joris%2C%20ik%20wil%20graag%20een%20website%20voor%20mijn%20bedrijf.">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 012.41 5.82c0 4.54-3.7 8.24-8.23 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42l-.48-.01c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07s.89 2.4 1.01 2.57c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
               App me via WhatsApp
             </a>
             <a class="btn btn-ghost" href="#prijzen">Bekijk prijzen</a>
           </div>
-          <div class="trust">
+          <div class="trust he">
             <span><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>Binnen een week online</span>
             <span><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 6 7 17l-5-5"/><path d="m22 10-7.5 7.5L13 16"/></svg></span>Eén vast aanspreekpunt</span>
             <span><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span>Hele Randstad</span>
@@ -762,12 +800,11 @@ img{max-width:100%;display:block}
   document.querySelectorAll('#dock a.dock-item').forEach(function(a){ a.addEventListener('pointerdown', function(){ snd.click(); }); });
   document.querySelectorAll('.faq summary').forEach(function(s){ s.addEventListener('click', function(){ snd.tick(); }); });
 
-  // ---- hero split-text reveal (WAAPI, marketing reveal) ----
-  (function(){
+  // ---- hero split-text reveal (WAAPI) — called on boot reveal ----
+  function runSplit(){
     var h=document.querySelector('[data-split]'); if(!h) return;
+    if(h.getAttribute('data-split')==='done') return; h.setAttribute('data-split','done');
     if(reduce) return; // keep visible, no movement
-    var html=h.innerHTML;
-    // wrap each word (preserving the <em>) in a span; simple tokenizer on text nodes
     var walker=document.createTreeWalker(h, NodeFilter.SHOW_TEXT, null);
     var nodes=[], n; while(n=walker.nextNode()){ nodes.push(n); }
     nodes.forEach(function(tn){
@@ -778,14 +815,34 @@ img{max-width:100%;display:block}
       });
       tn.parentNode.replaceChild(frag, tn);
     });
-    var words=h.querySelectorAll('.w');
-    words.forEach(function(w,i){
+    h.querySelectorAll('.w').forEach(function(w,i){
       w.animate(
         [{opacity:0, transform:'translateY(.45em)', filter:'blur(6px)'},
          {opacity:1, transform:'none', filter:'blur(0)'}],
         {duration:560, delay:i*55, easing:'cubic-bezier(.23,1,.32,1)', fill:'backwards'}
       );
     });
+  }
+
+  // ---- boot loader + coordinated hero entrance ----
+  (function(){
+    var boot=document.getElementById('boot');
+    var hero=document.querySelector('.hero-full');
+    if(hero && !reduce){
+      hero.classList.add('armed');
+      hero.querySelectorAll('.he').forEach(function(el,i){ el.style.transitionDelay=(i*95)+'ms'; });
+    }
+    var done=false;
+    function reveal(){
+      if(done) return; done=true;
+      if(boot) boot.classList.add('done');
+      if(hero) hero.classList.add('go');
+      runSplit();
+    }
+    var minMs = reduce ? 250 : 1250, t0=Date.now();
+    function schedule(){ setTimeout(reveal, Math.max(0, minMs-(Date.now()-t0))); }
+    if(document.readyState==='complete') schedule(); else window.addEventListener('load', schedule);
+    setTimeout(reveal, reduce?1000:3200); // hard fallback so it always clears
   })();
 
   // ---- additive reveal on scroll ----
