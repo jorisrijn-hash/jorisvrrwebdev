@@ -6,7 +6,7 @@
 <meta name="description" content="Honest fixed prices: Starter from 250 euro, Business from 750 euro and custom on request. Care plan included.">
 <link rel="canonical" href="https://jorisvrr.com/en/prijzen.html"><link rel="alternate" hreflang="nl" href="https://jorisvrr.com/prijzen.html"><link rel="alternate" hreflang="en" href="https://jorisvrr.com/en/prijzen.html"><link rel="alternate" hreflang="x-default" href="https://jorisvrr.com/prijzen.html">
 <meta property="og:type" content="website"><meta property="og:url" content="https://jorisvrr.com/en/prijzen.html"><meta property="og:title" content="Pricing | Website from 250 euro — jorisvrr"><meta property="og:description" content="Honest fixed prices: Starter from 250 euro, Business from 750 euro and custom on request. Care plan included."><meta property="og:locale" content="en">
-<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%234d8dff"/><text x="32" y="44" font-family="Arial,sans-serif" font-size="36" font-weight="700" fill="white" text-anchor="middle">j</text></svg>'>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%2264%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop%20stop-color%3D%22%234d8dff%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235fd4ff%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2215%22%20fill%3D%22url%28%23g%29%22/%3E%3Crect%20width%3D%2264%22%20height%3D%2224%22%20rx%3D%2215%22%20fill%3D%22%23ffffff%22%20opacity%3D%220.13%22/%3E%3Cpath%20d%3D%22M37.6%2022.5%20V40.5%20C37.6%2046.8%2033.2%2050.3%2027.7%2050.3%20C23.9%2050.3%2020.7%2048.8%2018.7%2046.1%22%20fill%3D%22none%22%20stroke%3D%22%2308132a%22%20stroke-width%3D%227.4%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Ccircle%20cx%3D%2237.6%22%20cy%3D%2214.4%22%20r%3D%224.5%22%20fill%3D%22%2308132a%22/%3E%3C/svg%3E"><link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/icon-16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><meta name="theme-color" content="#05070d">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"jorisvrr/webdev","description":"Web developer from the Netherlands. Websites for entrepreneurs and businesses, nationally and internationally.","serviceType":["Web design","Web development","Web shop","SEO","AI integration","Chatbot"],"areaServed":["Netherlands","Worldwide"],"email":"jorisvrr@gmail.com","telephone":"+31638032065","url":"https://jorisvrr.com/en/","priceRange":"from €250"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -142,7 +142,7 @@ h2{font-size:clamp(1.9rem,4.6vw,3.1rem)}
 #hero h1 .line>span{display:inline-block;transform:translateY(112%);animation:lift .85s var(--ease-out) forwards}
 #hero h1 .line:nth-child(2)>span{animation-delay:.09s}
 @keyframes lift{to{transform:none}}
-.flip{display:inline-grid;vertical-align:bottom;overflow:hidden;height:1.06em}
+.flip{display:inline-grid;justify-items:center;text-align:center;vertical-align:bottom;overflow:hidden;height:1.06em}
 .flip b{grid-area:1/1;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
   opacity:0;transform:translateY(100%);transition:transform .45s var(--ease-out),opacity .3s ease;white-space:nowrap}
 .flip b.on{opacity:1;transform:none}
@@ -361,6 +361,36 @@ footer{border-top:1px solid var(--line);padding:44px 0 110px;background:var(--bg
 .case{transition:opacity .35s var(--ease-out)}
 .case.filtered{opacity:0;pointer-events:none}
 @media (prefers-reduced-motion:reduce){.case{transition:none}}
+/* offerte-calculator */
+.calc-bar{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin:40px 0 8px;padding:22px 26px;border:1px solid var(--line-2);border-radius:var(--r);background:linear-gradient(120deg,rgba(77,141,255,.12),rgba(95,212,255,.04))}
+.calc-bar b{display:block;color:var(--ink);font-family:var(--display);font-size:1.12rem;font-weight:600}
+.calc-bar span{color:var(--body);font-size:.94rem}
+.calc-modal{position:fixed;inset:0;z-index:395;display:grid;place-items:center;padding:20px;background:rgba(3,5,10,.74);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .3s var(--ease-out),visibility .3s}
+.calc-modal.show{opacity:1;visibility:visible}
+.calc-card{background:var(--card-2);border:1px solid var(--line-2);border-radius:calc(var(--r) + 6px);max-width:560px;width:100%;max-height:90vh;overflow:auto;padding:clamp(24px,4vw,38px);position:relative;transform:translateY(14px) scale(.985);transition:transform .35s var(--ease-out)}
+.calc-modal.show .calc-card{transform:none}
+.calc-close{position:absolute;top:14px;right:16px;background:none;border:0;color:var(--body);cursor:pointer;font-size:28px;line-height:1;padding:4px}
+@media (hover:hover) and (pointer:fine){.calc-close:hover{color:var(--ink)}}
+.calc-card h3{font-size:1.5rem}
+.calc-intro{color:var(--body);font-size:.95rem;margin:8px 0 22px}
+.calc-grp{margin-bottom:20px}
+.calc-lbl{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.calc-opts{display:grid;gap:8px}
+.copt{display:flex;align-items:center;gap:12px;padding:12px 15px;border:1px solid var(--line);border-radius:11px;cursor:pointer;transition:border-color .16s ease,background-color .16s ease}
+@media (hover:hover) and (pointer:fine){.copt:hover{border-color:var(--line-2)}}
+.copt input{accent-color:var(--blue);width:17px;height:17px;flex:none;cursor:pointer}
+.copt span{flex:1;color:var(--ink);font-size:.96rem}
+.copt b{color:var(--cyan);font-family:var(--mono);font-size:.82rem;white-space:nowrap}
+.copt:has(input:checked){border-color:var(--blue);background:rgba(77,141,255,.09)}
+.calc-base{display:flex;align-items:center;gap:11px;font-size:.9rem;color:var(--body);border:1px dashed var(--line-2);border-radius:11px;padding:12px 15px;margin-bottom:18px}
+.calc-base svg{width:17px;height:17px;color:var(--cyan);flex:none}
+.calc-base b{margin-left:auto;color:var(--ink);font-family:var(--mono);white-space:nowrap}
+.calc-total{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:6px}
+.calc-total>div{border:1px solid var(--line-2);border-radius:12px;padding:14px 16px;background:rgba(77,141,255,.05)}
+.calc-total span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.calc-total b{font-family:var(--display);font-size:1.55rem;color:var(--ink);letter-spacing:-.02em}
+.calc-approx{font-size:.8rem;color:var(--muted);margin:12px 0 18px}
+#calc-cta{width:100%}
 </style>
 </head>
 <body>
@@ -379,8 +409,24 @@ footer{border-top:1px solid var(--line);padding:44px 0 110px;background:var(--bg
   <a class="ml" href="werk.html">Work<span>/01</span></a><a class="ml" href="prijzen.html">Pricing<span>/02</span></a><a class="ml" href="werkwijze.html">Process<span>/03</span></a><a class="ml" href="ai.html">AI<span>/04</span></a><a class="ml" href="contact.html">Contact<span>/05</span></a><div class="ml-lang"><a href="../prijzen.html">NL</a><a href="prijzen.html" class="on">EN</a></div>
 </div><main><header class="p-head"><div class="wrap"><span class="eyebrow">Pricing</span><h1>Honest pricing, no surprises.</h1><p class="sub">A fixed price upfront for the build. Maintenance and hosting on an affordable monthly plan.</p></div></header><section id="prijzen" style="padding-top:10px"><span class="sec-num">/03</span><div class="wrap">
     
+    <div class="calc-bar rv"><div><b>Build your quote</b><span>Tick what you need. Hosting &amp; maintenance is always included.</span></div>
+      <button class="btn btn-shimmer" id="calc-open" type="button">Build your quote<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M8 10h.01M12 10h.01M8 14h.01M12 14h.01M8 18h.01M12 18h.01"/></svg></button></div>
     <div class="tiers rv"><div class="tier"><h3>Starter</h3><div class="sub">One clean page that just works. Perfect to get online.</div><div class="price">€250 <small>one-off</small></div><div class="care">Care plan <b>€25/mo</b> · hosting, updates &amp; small changes</div><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>One-pager, fast and mobile</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Call &amp; WhatsApp button</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Basic SEO</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Online within a week</li></ul><a class="btn btn-ghost" rel="noopener" href="https://wa.me/31638032065?text=Hi%20Joris%2C%20tell%20me%20more%20about%20Starter.">Ask about Starter</a></div><div class="tier feat"><span class="badge">MOST POPULAR</span><h3>Business</h3><div class="sub">Multiple pages, more trust, more enquiries.</div><div class="price">from €750 <small>one-off</small></div><div class="care">Care plan <b>€45/mo</b> · everything in Starter + monthly changes</div><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Multiple pages (services, area, about)</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Reviews, photos and a quote form</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Extended SEO</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Priority on changes</li></ul><a class="btn btn-wa" rel="noopener" href="https://wa.me/31638032065?text=Hi%20Joris%2C%20tell%20me%20more%20about%20Business.">Ask about Business</a></div><div class="tier"><h3>Custom</h3><div class="sub">Web shop, online booking or something unique? We'll build it.</div><div class="price">from €1500 <small>on request</small></div><div class="care">Custom care plan · tailored to your site</div><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Web shop or online booking</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Custom design and features</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Integrations with your systems</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Personal advice upfront</li></ul><a class="btn btn-ghost" rel="noopener" href="https://wa.me/31638032065?text=Hi%20Joris%2C%20I%27d%20like%20to%20discuss%20a%20custom%20site.">Book a call</a></div></div><div class="calc rv" style="margin-top:30px">Do the math: an average job is easily worth 300 euro. A Starter site costs 250. <b>You earn it back with one extra job.</b> Everything after that is profit.</div>
-    <p class="tiers-note rv">Not sure which package fits? Message me what you do and I'll advise you honestly. I often make a free preview first.</p></div></section><section id="faq" style="padding-top:0"><span class="sec-num">/07</span><div class="wrap"><span class="eyebrow rv">Frequently asked</span><h2 class="rv">Good to know.</h2><div class="faq rv"><details><summary>What does a website cost?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary><div class="a">A Starter one-pager starts at 250 euro. A Business site starts higher, and custom work is on request. You always get a fixed price upfront.</div></details><details><summary>How soon am I online?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary><div class="a">Most sites are live within a week once I have your text and photos. Don't have those yet? I'll help with that.</div></details><details><summary>Do I have to pay monthly?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary><div class="a">The care plan is recommended but not required. It covers hosting, updates, security and small changes. Prefer to host it yourself? That's fine too.</div></details><details><summary>Do I own my website?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary><div class="a">Yes. The website and domain are yours. You're not tied to anything.</div></details><details><summary>What do you need from me?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary><div class="a">Your logo (or I'll make one), a few photos of your work and your services. I handle the rest.</div></details><details><summary>Do you work internationally?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary><div class="a">Yes. I build sites in Dutch and English and work with clients at home and abroad. Everything runs remotely, over chat and video call.</div></details></div></div></section><section id="contact" style="padding-top:0"><div class="wrap">
+    <p class="tiers-note rv">Not sure which package fits? Message me what you do and I'll advise you honestly. I often make a free preview first.</p></div></section>
+<div id="calc" class="calc-modal" data-lang="en" data-waprefix="Hi Joris, I built a quote with the calculator:" data-permo="/mo" aria-hidden="true">
+  <div class="calc-card" role="dialog" aria-modal="true" aria-labelledby="calc-t">
+    <button class="calc-close" type="button" aria-label="sluiten">&times;</button>
+    <h3 id="calc-t">Build your quote</h3>
+    <p class="calc-intro">Tick what you need. Hosting &amp; maintenance is always included.</p>
+    <div class="calc-grp"><span class="calc-lbl">Website type</span><div class="calc-opts"><label class="copt"><input type="radio" name="ctype" data-once="250" data-month="0" checked><span>One-pager</span><b>€250</b></label><label class="copt"><input type="radio" name="ctype" data-once="750" data-month="0"><span>Multiple pages</span><b>€750</b></label><label class="copt"><input type="radio" name="ctype" data-once="1500" data-month="0"><span>Web shop or custom</span><b>€1500</b></label></div></div>
+    <div class="calc-grp"><span class="calc-lbl">Add AI?</span><div class="calc-opts"><label class="copt"><input type="radio" name="cai" data-once="0" data-month="0" checked><span>None</span><b>&mdash;</b></label><label class="copt"><input type="radio" name="cai" data-once="450" data-month="45"><span>AI Chatbot</span><b>€450 + €45/mo</b></label><label class="copt"><input type="radio" name="cai" data-once="750" data-month="75"><span>AI Assistant</span><b>€750 + €75/mo</b></label></div></div>
+    <div class="calc-grp"><span class="calc-lbl">Extras</span><div class="calc-opts"><label class="copt"><input type="checkbox" class="cextra" data-once="250" data-month="0"><span>Extra language (NL/EN)</span><b>€250</b></label><label class="copt"><input type="checkbox" class="cextra" data-once="200" data-month="0"><span>Extended local SEO</span><b>€200</b></label><label class="copt"><input type="checkbox" class="cextra" data-once="150" data-month="0"><span>Logo design</span><b>€150</b></label></div></div>
+    <div class="calc-base"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Always included: hosting &amp; maintenance</span><b>€25/mo</b></div>
+    <div class="calc-total"><div><span>One-off</span><b id="calc-once">€250</b></div><div><span>Per month</span><b id="calc-month">€25/mo</b></div></div>
+    <p class="calc-approx">Indication, excl. VAT. We set the exact price after a short chat.</p>
+    <a class="btn btn-wa" id="calc-cta" rel="noopener" href="#">Request this quote</a>
+  </div>
+</div><section id="faq" style="padding-top:clamp(56px,8vw,110px)"><span class="sec-num">/07</span><div class="wrap"><span class="eyebrow rv">Frequently asked</span><h2 class="rv">Good to know.</h2><div class="faq rv"><details><summary>What does a website cost?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary><div class="a">A Starter one-pager starts at 250 euro. A Business site starts higher, and custom work is on request. You always get a fixed price upfront.</div></details><details><summary>How soon am I online?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary><div class="a">Most sites are live within a week once I have your text and photos. Don't have those yet? I'll help with that.</div></details><details><summary>Do I have to pay monthly?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary><div class="a">The care plan is recommended but not required. It covers hosting, updates, security and small changes. Prefer to host it yourself? That's fine too.</div></details><details><summary>Do I own my website?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary><div class="a">Yes. The website and domain are yours. You're not tied to anything.</div></details><details><summary>What do you need from me?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary><div class="a">Your logo (or I'll make one), a few photos of your work and your services. I handle the rest.</div></details><details><summary>Do you work internationally?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary><div class="a">Yes. I build sites in Dutch and English and work with clients at home and abroad. Everything runs remotely, over chat and video call.</div></details></div></div></section><section id="contact" style="padding-top:clamp(56px,8vw,110px)"><div class="wrap">
     <div class="box rv" id="cta-box"><h2>Ready for a site that delivers customers?</h2><p class="sub">Message or call, no obligations. Tell me what you do and you'll often get a free preview.</p>
     <div class="btns"><a class="btn btn-wa" rel="noopener" href="https://wa.me/31638032065?text=Hoi%20Joris%2C%20ik%20wil%20graag%20een%20website%20voor%20mijn%20bedrijf."><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 012.41 5.82c0 4.54-3.7 8.24-8.23 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42l-.48-.01c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07s.89 2.4 1.01 2.57c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>Message me on WhatsApp</a>
     <a class="btn btn-ghost" href="tel:+31638032065">Call +31 6 38032065</a></div>
@@ -581,7 +627,11 @@ if(!reduce){
     var nodes=[], w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null), n;
     while(n=w.nextNode()){ if(n.textContent.replace(/\s/g,'').length) nodes.push({n:n,f:n.textContent}); }
     if(!nodes.length){ el._busy=false; return; }
-    var total=nodes.reduce(function(a,b){return a+b.f.length;},0), fr=0, steps=Math.min(30,total+6);
+    // afmetingen vastzetten: scramble mag de layout nooit verschuiven of vergroten
+    var lockH=el.offsetHeight, pH=el.style.height, pO=el.style.overflow;
+    el.style.height=lockH+'px'; el.style.overflow='hidden';
+    function restore(){ el.style.height=pH; el.style.overflow=pO; el._busy=false; }
+    var total=nodes.reduce(function(a,b){return a+b.f.length;},0), fr=0, steps=Math.min(22,total+5);
     (function step(){
       var rev=Math.floor(fr/steps*total)+2, c=0;
       nodes.forEach(function(o){ var s='';
@@ -589,7 +639,7 @@ if(!reduce){
           if(/\s/.test(ch)){ s+=ch; } else if(c<rev){ s+=ch; } else { s+=SCH[(Math.random()*SCH.length)|0]; } c++; }
         o.n.textContent=s; });
       fr++;
-      if(fr<=steps){ setTimeout(step,26); } else { nodes.forEach(function(o){o.n.textContent=o.f;}); el._busy=false; }
+      if(fr<=steps){ setTimeout(step,26); } else { nodes.forEach(function(o){o.n.textContent=o.f;}); restore(); }
     })();
   };
   document.querySelectorAll('h2, .p-head h1, .eyebrow, .case .tag').forEach(function(el){
@@ -629,6 +679,34 @@ if(!reduce){
       else { c.classList.add('filtered'); setTimeout(function(){ if(c.classList.contains('filtered')) c.style.display='none'; }, reduce?0:360); }
     });
   });
+})();
+
+
+// ---- offerte-calculator ----
+(function(){
+  var modal=document.getElementById('calc'); if(!modal) return;
+  var openBtn=document.getElementById('calc-open'), closeBtn=modal.querySelector('.calc-close');
+  var onceEl=document.getElementById('calc-once'), monthEl=document.getElementById('calc-month'), cta=document.getElementById('calc-cta');
+  var BASE=25, permo=modal.dataset.permo, pre=modal.dataset.waprefix, lang=modal.dataset.lang;
+  function recalc(){
+    var once=0, month=BASE, parts=[];
+    var t=modal.querySelector('input[name="ctype"]:checked');
+    if(t){ once+=+t.dataset.once; parts.push(t.parentNode.querySelector('span').textContent); }
+    var ai=modal.querySelector('input[name="cai"]:checked');
+    if(ai){ once+=+ai.dataset.once; month+=+ai.dataset.month; if(+ai.dataset.once||+ai.dataset.month){ parts.push(ai.parentNode.querySelector('span').textContent); } }
+    modal.querySelectorAll('.cextra:checked').forEach(function(x){ once+=+x.dataset.once; month+=+x.dataset.month; parts.push(x.parentNode.querySelector('span').textContent); });
+    onceEl.textContent='\u20ac'+once; monthEl.textContent='\u20ac'+month+permo;
+    var total=(lang==='en'?('Total ~ \u20ac'+once+' one-off + \u20ac'+month+permo):('Totaal \u00b1 \u20ac'+once+' eenmalig + \u20ac'+month+permo));
+    cta.href='https://wa.me/31638032065?text='+encodeURIComponent(pre+' '+parts.join(', ')+'. '+total+'.');
+  }
+  modal.addEventListener('change',recalc);
+  function open(){ modal.classList.add('show'); recalc(); }
+  function close(){ modal.classList.remove('show'); }
+  if(openBtn) openBtn.addEventListener('click',open);
+  if(closeBtn) closeBtn.addEventListener('click',close);
+  modal.addEventListener('click',function(e){ if(e.target===modal) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  recalc();
 })();
 
 })();
