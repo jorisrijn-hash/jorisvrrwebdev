@@ -1,0 +1,1473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Joris VRR · Digital builder</title>
+<meta name="description" content="Joris VRR designs and builds websites, web applications and AI systems for small businesses. Work, case studies and experiments.">
+<meta name="author" content="Joris VRR">
+<meta name="theme-color" content="#0E120F">
+<link rel="canonical" href="https://jorisvrr.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Joris VRR">
+<meta property="og:title" content="Joris VRR · Digital builder">
+<meta property="og:description" content="Websites, web applications and AI systems for small businesses. Built around the problem, not the technology.">
+<meta property="og:url" content="https://jorisvrr.com/">
+<meta property="og:image" content="https://jorisvrr.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Joris VRR · Digital builder">
+<meta name="twitter:description" content="Websites, web applications and AI systems for small businesses.">
+<meta name="twitter:image" content="https://jorisvrr.com/og-image.png">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&display=swap">
+
+<script>
+(function(){
+  var r = document.documentElement;
+  r.classList.add('js');
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) r.classList.add('loading');
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Joris VRR",
+  "url": "https://jorisvrr.com/",
+  "jobTitle": "Software developer and digital builder",
+  "address": { "@type": "PostalAddress", "addressLocality": "Leiden", "addressCountry": "NL" },
+  "knowsAbout": ["Web development", "Web applications", "AI integration", "Automation", "Product design"]
+}
+</script>
+
+<style>
+/* ============================================================
+   JORIS VRR
+   01 tokens · 02 base · 03 layout · 04 loader · 05 header
+   06 hero · 07 ethos · 08 work · 09 case · 10 process
+   11 services · 12 stack · 13 lab · 14 experience
+   15 contact · 16 footer · 17 palette · 18 motion · 19 responsive
+   ============================================================ */
+
+/* 01 — tokens ------------------------------------------------ */
+:root{
+  --void:      oklch(0.175 0.008 150);
+  --void-2:    oklch(0.215 0.008 150);
+  --void-3:    oklch(0.262 0.008 150);
+  --ink:       oklch(0.945 0.014 85);
+  --ink-2:     oklch(0.770 0.012 85);
+  --ink-3:     oklch(0.645 0.011 85);
+  --brass:     oklch(0.790 0.085 82);
+  --cypress:   oklch(0.560 0.055 155);
+
+  --line:        oklch(0.945 0.014 85 / 0.13);
+  --line-strong: oklch(0.945 0.014 85 / 0.30);
+  --wash:        oklch(0.945 0.014 85 / 0.04);
+
+  --serif: "Bodoni Moda", "Bodoni 72", Didot, Georgia, "Times New Roman", serif;
+  --sans:  "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --mono:  ui-monospace, SFMono-Regular, Menlo, "Roboto Mono", monospace;
+
+  --gutter: clamp(1.25rem, 4.2vw, 4.5rem);
+  --measure: 66ch;
+
+  --e-out: cubic-bezier(0.16, 1, 0.30, 1);
+  --e-io:  cubic-bezier(0.77, 0, 0.175, 1);
+  --d-micro: 160ms;
+  --d-ui:    240ms;
+  --d-reveal:560ms;
+  --d-page:  620ms;
+
+  --z-sticky: 100;
+  --z-nav:    200;
+  --z-sheet:  300;
+  --z-case:   400;
+  --z-palette:500;
+  --z-loader: 600;
+}
+
+/* 02 — base -------------------------------------------------- */
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+html.loading{ overflow:hidden; }
+body{
+  margin:0;
+  background:var(--void);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:clamp(0.9375rem, 0.9rem + 0.2vw, 1.0625rem);
+  line-height:1.6;
+  font-synthesis-weight:none;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+/* film grain: the brand is documented, not rendered */
+body::after{
+  content:""; position:fixed; inset:-50%; z-index:1; pointer-events:none;
+  opacity:.05; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+img,svg{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; }
+:focus-visible{ outline:2px solid var(--brass); outline-offset:3px; border-radius:1px; }
+::selection{ background:var(--brass); color:var(--void); }
+
+h1,h2,h3,h4{ margin:0; font-weight:400; text-wrap:balance; }
+p{ margin:0; text-wrap:pretty; }
+.serif{ font-family:var(--serif); }
+
+.display{
+  font-family:var(--serif); font-weight:500;
+  font-size:clamp(2.5rem, 7.4vw, 5.25rem);
+  line-height:0.98; letter-spacing:-0.021em;
+}
+.h2{
+  font-family:var(--serif); font-weight:500;
+  font-size:clamp(1.875rem, 4.2vw, 3.25rem);
+  line-height:1.04; letter-spacing:-0.018em;
+}
+.h3{
+  font-family:var(--serif); font-weight:500;
+  font-size:clamp(1.375rem, 2.4vw, 2rem);
+  line-height:1.1; letter-spacing:-0.012em;
+}
+.display em,.h2 em,.h3 em{ font-style:italic; font-weight:400; }
+
+.lede{ font-size:clamp(1.0625rem, 1.5vw, 1.3125rem); line-height:1.5; color:var(--ink-2); max-width:42ch; }
+.body{ color:var(--ink-2); max-width:var(--measure); }
+.body + .body{ margin-top:1em; }
+
+/* the caption is the voice of this site: it labels artefacts, never headings */
+.caption{
+  font-size:0.6875rem; line-height:1.35; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--ink-3);
+  display:flex; flex-wrap:wrap; gap:0 0.9em; align-items:baseline;
+}
+.caption .idx{ font-family:var(--mono); letter-spacing:0.06em; color:var(--brass); }
+.caption b{ font-weight:500; color:var(--ink-2); }
+.mono{ font-family:var(--mono); font-size:0.75rem; letter-spacing:0.02em; }
+
+/* unresolved content, visible on purpose */
+.todo{
+  color:var(--brass); border-bottom:1px dotted currentColor;
+  font-style:normal;
+}
+.todo::before{ content:"[ "; } .todo::after{ content:" ]"; }
+
+/* 03 — layout ------------------------------------------------ */
+.wrap{ width:100%; max-width:1480px; margin-inline:auto; padding-inline:var(--gutter); position:relative; z-index:2; }
+section{ position:relative; }
+section[id]{ scroll-margin-top:5.5rem; }
+.band{ padding-block:clamp(4.5rem, 11vh, 9rem); }
+.band--tight{ padding-block:clamp(3rem, 7vh, 5.5rem); }
+
+/* running head: a rule with the section name set on it, book style */
+.rule{
+  display:flex; align-items:center; gap:1.25rem;
+  border-top:1px solid var(--line); padding-top:0.75rem;
+  margin-bottom:clamp(2.25rem, 5vw, 4rem);
+}
+.rule__name{
+  font-size:0.6875rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-3);
+  margin-left:auto; white-space:nowrap;
+}
+.rule__dot{ width:5px; height:5px; background:var(--brass); flex:none; }
+
+.grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:clamp(1.25rem,2.5vw,2.5rem); }
+
+.skip{
+  position:fixed; left:var(--gutter); top:-4rem; z-index:var(--z-nav);
+  background:var(--void-2); border:1px solid var(--line-strong);
+  padding:0.65rem 1rem; font-size:0.8125rem; transition:top var(--d-ui) var(--e-out);
+}
+.skip:focus{ top:1rem; }
+
+/* buttons ---------------------------------------------------- */
+.btn{
+  --btn-ink:var(--ink);
+  display:inline-flex; align-items:center; gap:0.7em;
+  font-size:0.75rem; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--btn-ink); padding:0.95em 1.5em; border:1px solid var(--line-strong);
+  position:relative; overflow:hidden; isolation:isolate;
+  transition:transform var(--d-micro) var(--e-out), color var(--d-ui) ease, border-color var(--d-ui) ease;
+}
+.btn::before{
+  content:""; position:absolute; inset:0; z-index:-1; background:var(--ink);
+  clip-path:inset(0 0 100% 0); transition:clip-path var(--d-ui) var(--e-out);
+}
+.btn:active{ transform:scale(0.98); }
+.btn .arw{ transition:transform var(--d-ui) var(--e-out); }
+.btn--solid{ background:var(--ink); color:var(--void); border-color:var(--ink); }
+.btn--solid::before{ background:var(--brass); }
+.btn--ghost{ border-color:var(--line); }
+@media (hover:hover) and (pointer:fine){
+  .btn:hover{ color:var(--void); border-color:var(--ink); }
+  .btn:hover::before{ clip-path:inset(0 0 0 0); }
+  .btn--solid:hover{ color:var(--void); border-color:var(--brass); }
+  .btn:hover .arw{ transform:translateX(3px); }
+}
+.link{
+  display:inline-flex; align-items:center; gap:0.55em;
+  font-size:0.75rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-2);
+  padding-bottom:0.3em; border-bottom:1px solid var(--line-strong);
+  transition:color var(--d-ui) ease, border-color var(--d-ui) ease;
+}
+@media (hover:hover) and (pointer:fine){
+  .link:hover{ color:var(--brass); border-color:var(--brass); }
+}
+
+/* 04 — loader ------------------------------------------------ */
+.loader{
+  position:fixed; inset:0; z-index:var(--z-loader); background:var(--void);
+  display:grid; place-items:center; clip-path:inset(0 0 0 0);
+  transition:clip-path var(--d-page) var(--e-io);
+}
+.loader__mark{
+  font-size:0.8125rem; letter-spacing:0.62em; text-transform:uppercase; color:var(--ink);
+  padding-left:0.62em; opacity:0;
+  animation:markIn 900ms var(--e-out) forwards;
+}
+.loader__line{
+  height:1px; width:min(58vw,420px); margin-top:1.5rem; background:var(--line-strong);
+  transform:scaleX(0); transform-origin:left; animation:lineIn 1000ms var(--e-out) 120ms forwards;
+}
+@keyframes markIn{ from{ opacity:0; letter-spacing:0.95em; } to{ opacity:1; letter-spacing:0.62em; } }
+@keyframes lineIn{ to{ transform:scaleX(1); } }
+html:not(.loading) .loader{ clip-path:inset(0 0 100% 0); pointer-events:none; }
+html:not(.js) .loader{ display:none; }
+
+/* 05 — header ------------------------------------------------ */
+.header{
+  position:fixed; inset:0 0 auto; z-index:var(--z-nav);
+  display:flex; align-items:center; gap:1.5rem;
+  padding:1.1rem var(--gutter);
+  transition:background var(--d-ui) ease, border-color var(--d-ui) ease, transform 380ms var(--e-out);
+  border-bottom:1px solid transparent;
+}
+.header[data-stuck="true"]{ background:oklch(0.175 0.008 150 / 0.86); backdrop-filter:blur(14px); border-bottom-color:var(--line); }
+.header[data-hidden="true"]{ transform:translateY(-102%); }
+.wordmark{
+  font-size:0.8125rem; letter-spacing:0.26em; text-transform:uppercase; font-weight:500;
+  display:inline-flex; align-items:center; gap:0.7rem;
+}
+.wordmark .mk{ width:10px; height:10px; border:1px solid var(--ink); position:relative; flex:none; }
+.wordmark .mk::after{ content:""; position:absolute; left:1px; bottom:1px; width:3px; height:3px; background:var(--brass); }
+.nav{ margin-left:auto; display:flex; align-items:center; gap:clamp(1rem,2vw,2rem); }
+.nav a{
+  font-size:0.6875rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-2);
+  transition:color var(--d-ui) ease;
+}
+@media (hover:hover) and (pointer:fine){ .nav a:hover{ color:var(--ink); } }
+.nav a[aria-current="true"]{ color:var(--ink); }
+.kbd{
+  display:inline-flex; align-items:center; gap:0.4em; font-family:var(--mono); font-size:0.6875rem;
+  color:var(--ink-3); border:1px solid var(--line); padding:0.4em 0.6em;
+  transition:color var(--d-ui) ease, border-color var(--d-ui) ease;
+}
+@media (hover:hover) and (pointer:fine){ .kbd:hover{ color:var(--ink); border-color:var(--line-strong); } }
+.burger{ display:none; width:2.25rem; height:2.25rem; margin-left:auto; position:relative; }
+.burger span{ position:absolute; left:0.35rem; right:0.35rem; height:1px; background:var(--ink); transition:transform var(--d-ui) var(--e-out); }
+.burger span:nth-child(1){ top:0.85rem; } .burger span:nth-child(2){ bottom:0.85rem; }
+.sheet{
+  position:fixed; inset:0; z-index:var(--z-sheet); background:var(--void);
+  display:flex; flex-direction:column; justify-content:center; gap:0.25rem;
+  padding:var(--gutter); clip-path:inset(0 0 100% 0);
+  transition:clip-path 420ms var(--e-io); visibility:hidden;
+}
+.sheet[data-open="true"]{ clip-path:inset(0 0 0 0); visibility:visible; }
+.sheet a{ font-family:var(--serif); font-size:clamp(2rem,9vw,2.75rem); line-height:1.28; letter-spacing:-0.015em; }
+.sheet .caption{ margin-top:2rem; }
+.sheet__close{ position:absolute; top:1.1rem; right:var(--gutter); font-size:0.6875rem; letter-spacing:0.16em; text-transform:uppercase; }
+
+/* 06 — hero -------------------------------------------------- */
+.hero{ min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end; padding-bottom:clamp(1.5rem,4vh,3rem); position:relative; }
+.hero::before{ /* the room is dark, one light source */
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(120% 80% at 68% 8%, oklch(0.945 0.014 85 / 0.075), transparent 62%);
+}
+.hero__inner{ display:grid; grid-template-columns:repeat(12,1fr); gap:clamp(1.5rem,3vw,3rem); align-items:end; }
+.hero__lead{ grid-column:1 / span 8; }
+.hero__statement{ margin-top:1.25rem; }
+.hero__sub{ margin-top:1.75rem; max-width:46ch; color:var(--ink-2); }
+.hero__cta{ display:flex; flex-wrap:wrap; gap:0.75rem; margin-top:2.25rem; }
+
+/* the frame: a viewfinder on the working state, not a decoration */
+.frame{ grid-column:9 / span 4; position:relative; padding:1.25rem; border:1px solid var(--line); }
+.frame__corner{ position:absolute; width:10px; height:10px; border:1px solid var(--brass); }
+.frame__corner.tl{ top:-1px; left:-1px; border-right:0; border-bottom:0; }
+.frame__corner.tr{ top:-1px; right:-1px; border-left:0; border-bottom:0; }
+.frame__corner.bl{ bottom:-1px; left:-1px; border-right:0; border-top:0; }
+.frame__corner.br{ bottom:-1px; right:-1px; border-left:0; border-top:0; }
+.frame dl{ margin:0; display:grid; gap:0.85rem; }
+.frame .row{ display:flex; justify-content:space-between; align-items:baseline; gap:1rem; border-bottom:1px solid var(--line); padding-bottom:0.7rem; }
+.frame .row:last-child{ border-bottom:0; padding-bottom:0; }
+.frame dt{ font-size:0.6875rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-3); }
+.frame dd{ margin:0; font-size:0.8125rem; text-align:right; color:var(--ink); }
+.frame dd .live{ display:inline-flex; align-items:center; gap:0.5em; }
+.dot{ width:6px; height:6px; background:var(--cypress); border-radius:50%; flex:none; }
+.dot--brass{ background:var(--brass); }
+.scrollcue{ display:flex; align-items:center; gap:0.75rem; margin-top:clamp(2rem,5vh,3.5rem); color:var(--ink-3); }
+.scrollcue .bar{ width:56px; height:1px; background:var(--line-strong); position:relative; overflow:hidden; }
+.scrollcue .bar::after{ content:""; position:absolute; inset:0; background:var(--brass); transform:translateX(-100%); animation:cue 2.6s var(--e-io) infinite; }
+@keyframes cue{ 0%{ transform:translateX(-100%);} 55%,100%{ transform:translateX(100%);} }
+
+/* 07 — ethos ------------------------------------------------- */
+.ethos__grid{ align-items:start; }
+.ethos__claim{ grid-column:1 / span 7; }
+.ethos__aside{ grid-column:9 / span 4; display:grid; gap:1.75rem; }
+.ethos__aside p{ color:var(--ink-2); font-size:0.9375rem; }
+.split{ display:grid; gap:1rem; padding-top:1rem; border-top:1px solid var(--line); }
+.split h3{ font-size:0.8125rem; letter-spacing:0.02em; color:var(--ink); font-weight:500; }
+
+/* 08 — work -------------------------------------------------- */
+.plates{ display:grid; gap:clamp(4rem,10vh,8rem); }
+.plate{ display:grid; grid-template-columns:repeat(12,1fr); gap:clamp(1.25rem,2.5vw,3rem); align-items:center; }
+.plate__frame{ grid-column:1 / span 7; position:relative; }
+.plate__body{ grid-column:8 / span 5; }
+.plate:nth-child(even) .plate__frame{ grid-column:6 / span 7; grid-row:1; }
+.plate:nth-child(even) .plate__body{ grid-column:1 / span 5; grid-row:1; }
+.plate__media{
+  position:relative; aspect-ratio:16/10; border:1px solid var(--line);
+  background:
+    linear-gradient(180deg, oklch(0.945 0.014 85 / 0.045), transparent 55%),
+    var(--void-2);
+  display:grid; place-items:center; overflow:hidden;
+  transition:border-color var(--d-ui) ease, background-color var(--d-ui) ease;
+}
+.plate__media img{ width:100%; height:100%; object-fit:cover; }
+.plate__media .slot{
+  font-size:0.6875rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-3);
+  border:1px dashed var(--line-strong); padding:0.7rem 1rem;
+}
+.plate__sweep{ position:absolute; left:0; bottom:0; height:1px; width:100%; background:var(--brass); transform:scaleX(0); transform-origin:left; transition:transform 520ms var(--e-out); }
+.plate__num{
+  position:absolute; top:-0.9rem; left:-0.4rem; font-family:var(--mono); font-size:0.75rem;
+  color:var(--ink-3); background:var(--void); padding:0 0.5rem;
+}
+.plate__title{ margin-top:1rem; }
+.plate__line{ margin-top:1rem; color:var(--ink-2); max-width:38ch; }
+.plate__meta{ margin:1.75rem 0 0; display:grid; gap:0.7rem; }
+.plate__meta .row{ display:grid; grid-template-columns:6.5rem 1fr; gap:1rem; padding-bottom:0.7rem; border-bottom:1px solid var(--line); }
+.plate__meta dt{ font-size:0.6875rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-3); }
+.plate__meta dd{ margin:0; font-size:0.875rem; color:var(--ink-2); }
+.plate__actions{ display:flex; flex-wrap:wrap; gap:0.75rem; margin-top:1.75rem; }
+@media (hover:hover) and (pointer:fine){
+  .plate:hover .plate__media{ border-color:var(--line-strong); background-color:var(--void-3); }
+  .plate:hover .plate__sweep{ transform:scaleX(1); }
+}
+
+/* 09 — case study -------------------------------------------- */
+.cases{ border-top:1px solid var(--line); }
+html.js .cases{ position:fixed; inset:0; z-index:var(--z-case); pointer-events:none; border:0; }
+html.js .case{
+  position:absolute; inset:0; background:var(--void); overflow-y:auto; overscroll-behavior:contain;
+  clip-path:inset(100% 0 0 0); visibility:hidden;
+  transition:clip-path var(--d-page) var(--e-io), visibility 0s linear var(--d-page);
+}
+html.js .case[data-open="true"]{ clip-path:inset(0 0 0 0); visibility:visible; pointer-events:auto; transition-delay:0s; }
+.case__bar{
+  position:sticky; top:0; z-index:2; display:flex; align-items:center; gap:1rem;
+  padding:1.1rem var(--gutter); background:oklch(0.175 0.008 150 / 0.9); backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.case__bar .nm{ font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; }
+.case__close{ margin-left:auto; font-size:0.6875rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-2); display:inline-flex; align-items:center; gap:0.6em; }
+.case__inner{ padding-block:clamp(3rem,8vh,6rem); }
+.case__head{ max-width:52ch; }
+.case__head .h2{ margin-top:1rem; }
+.case__head p{ margin-top:1.25rem; color:var(--ink-2); }
+.case__facts{ margin:3rem 0 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1.5rem; border-top:1px solid var(--line); padding-top:1.5rem; }
+.case__facts dt{ font-size:0.6875rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-3); }
+.case__facts dd{ margin:0.5rem 0 0; font-size:0.875rem; color:var(--ink); }
+.case__body{ display:grid; grid-template-columns:repeat(12,1fr); gap:clamp(1.5rem,3vw,3rem); margin-top:clamp(3rem,7vh,5rem); }
+.case__rail{ grid-column:1 / span 3; position:sticky; top:6rem; align-self:start; display:grid; gap:0.55rem; }
+.case__rail a{ font-size:0.6875rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-3); display:flex; gap:0.9rem; transition:color var(--d-ui) ease; }
+.case__rail a .n{ font-family:var(--mono); }
+.case__rail a[aria-current="true"]{ color:var(--ink); }
+@media (hover:hover) and (pointer:fine){ .case__rail a:hover{ color:var(--ink-2); } }
+.case__chapters{ grid-column:5 / span 7; display:grid; gap:clamp(2.5rem,6vh,4rem); }
+.case__chapters section{ scroll-margin-top:6rem; }
+.case__chapters h3{ font-family:var(--serif); font-size:clamp(1.25rem,2vw,1.625rem); font-weight:500; letter-spacing:-0.01em; }
+.case__chapters h3 .n{ font-family:var(--mono); font-size:0.75rem; color:var(--brass); margin-right:1rem; letter-spacing:0.06em; }
+.case__chapters p{ margin-top:0.9rem; color:var(--ink-2); max-width:var(--measure); }
+.case__chapters ul{ margin:0.9rem 0 0; padding-left:1.1rem; color:var(--ink-2); display:grid; gap:0.45rem; max-width:var(--measure); }
+.case__chapters li::marker{ color:var(--brass); }
+.case__foot{ margin-top:clamp(3rem,7vh,5rem); padding-top:1.5rem; border-top:1px solid var(--line); display:flex; flex-wrap:wrap; gap:0.75rem; align-items:center; }
+
+html:not(.js) .case{ padding-block:clamp(3rem,8vh,5rem); border-top:1px solid var(--line); }
+html:not(.js) .case__close,html:not(.js) .case__bar{ display:none; }
+
+/* 10 — process ----------------------------------------------- */
+.steps{ display:grid; grid-template-columns:repeat(12,1fr); gap:0; border-top:1px solid var(--line); }
+.step{ grid-column:span 12; display:grid; grid-template-columns:5rem 1fr; gap:clamp(1rem,3vw,3rem); padding:1.6rem 0; border-bottom:1px solid var(--line); position:relative; }
+.step__n{ font-family:var(--mono); font-size:0.75rem; color:var(--brass); padding-top:0.35rem; }
+.step__t{ font-family:var(--serif); font-size:clamp(1.5rem,3.2vw,2.25rem); font-weight:500; line-height:1.05; letter-spacing:-0.015em; }
+.step__d{ margin-top:0.6rem; color:var(--ink-2); max-width:52ch; font-size:0.9375rem; }
+.step::after{ content:""; position:absolute; left:0; bottom:-1px; height:1px; width:100%; background:var(--brass); transform:scaleX(0); transform-origin:left; transition:transform 620ms var(--e-out); }
+@media (hover:hover) and (pointer:fine){ .step:hover::after{ transform:scaleX(1); } }
+
+/* 11 — services ---------------------------------------------- */
+.services{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:0; border-top:1px solid var(--line); }
+.service{ padding:2rem clamp(1rem,2vw,2rem) 2.25rem 0; border-bottom:1px solid var(--line); }
+.service h3{ font-family:var(--serif); font-size:clamp(1.375rem,2.2vw,1.75rem); font-weight:500; letter-spacing:-0.01em; }
+.service p{ margin-top:0.9rem; color:var(--ink-2); font-size:0.9375rem; max-width:34ch; }
+.service ul{ margin:1.1rem 0 0; padding:0; list-style:none; display:grid; gap:0.4rem; }
+.service li{ font-size:0.8125rem; color:var(--ink-3); display:flex; gap:0.7em; }
+.service li::before{ content:""; width:4px; height:4px; margin-top:0.55em; background:var(--brass); flex:none; }
+
+/* 12 — stack ------------------------------------------------- */
+.stack{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:clamp(1.5rem,3vw,2.5rem); }
+.stack__col h3{ font-size:0.6875rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-3); padding-bottom:0.75rem; border-bottom:1px solid var(--line); }
+.stack__col ul{ margin:1rem 0 0; padding:0; list-style:none; display:grid; gap:0.5rem; }
+.stack__col li{ font-size:0.9375rem; color:var(--ink-2); }
+.stack__note{ margin-top:2.5rem; color:var(--ink-3); font-size:0.8125rem; max-width:52ch; }
+
+/* 13 — lab --------------------------------------------------- */
+.lab{ display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr)); border-top:1px solid var(--line); border-left:1px solid var(--line); }
+.lab__item{ border-right:1px solid var(--line); border-bottom:1px solid var(--line); padding:1.5rem 1.35rem 1.6rem; display:flex; flex-direction:column; gap:0.65rem; min-height:170px; transition:background-color var(--d-ui) ease; }
+.lab__item h3{ font-size:0.9375rem; font-weight:500; letter-spacing:0.01em; }
+.lab__item p{ font-size:0.8125rem; color:var(--ink-3); }
+.lab__item .foot{ margin-top:auto; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding-top:0.9rem; }
+.lab__item .state{ font-size:0.625rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-3); display:inline-flex; align-items:center; gap:0.5em; }
+.lab__item .go{ font-family:var(--mono); font-size:0.75rem; color:var(--ink-3); transition:color var(--d-ui) ease, transform var(--d-ui) var(--e-out); }
+@media (hover:hover) and (pointer:fine){
+  a.lab__item:hover{ background:var(--void-2); }
+  a.lab__item:hover .go{ color:var(--brass); transform:translateX(3px); }
+}
+
+/* 14 — experience -------------------------------------------- */
+.tl{ display:grid; border-top:1px solid var(--line); }
+.tl__row{ display:grid; grid-template-columns:9rem 1fr; gap:clamp(1rem,3vw,3rem); padding:1.5rem 0; border-bottom:1px solid var(--line); }
+.tl__yr{ font-family:var(--mono); font-size:0.75rem; color:var(--ink-3); padding-top:0.25rem; }
+.tl__role{ font-family:var(--serif); font-size:clamp(1.25rem,2.2vw,1.625rem); font-weight:500; letter-spacing:-0.01em; }
+.tl__org{ font-size:0.8125rem; color:var(--ink-3); margin-top:0.35rem; letter-spacing:0.06em; text-transform:uppercase; }
+.tl__pts{ margin:1rem 0 0; padding-left:1.1rem; display:grid; gap:0.4rem; color:var(--ink-2); font-size:0.9375rem; max-width:var(--measure); }
+.tl__pts li::marker{ color:var(--brass); }
+
+/* 15 — contact ----------------------------------------------- */
+.contact__grid{ align-items:start; }
+.contact__lead{ grid-column:1 / span 5; }
+.contact__form{ grid-column:7 / span 6; }
+.field{ display:grid; gap:0.6rem; margin-top:1.75rem; }
+.field > span{ font-size:0.6875rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-3); }
+input,textarea{
+  font:inherit; font-size:0.9375rem; color:var(--ink); background:transparent;
+  border:0; border-bottom:1px solid var(--line-strong); padding:0.7rem 0;
+  transition:border-color var(--d-ui) ease;
+}
+input::placeholder,textarea::placeholder{ color:var(--ink-3); }
+input:focus,textarea:focus{ border-bottom-color:var(--brass); }
+input:focus:not(:focus-visible),textarea:focus:not(:focus-visible){ outline:0; }
+textarea{ resize:vertical; min-height:6.5rem; }
+.chips{ display:flex; flex-wrap:wrap; gap:0.5rem; }
+.chip{ position:relative; }
+.chip input{ position:absolute; opacity:0; inset:0; width:100%; height:100%; margin:0; cursor:pointer; }
+.chip span{
+  display:block; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase;
+  padding:0.7em 1.1em; border:1px solid var(--line-strong); color:var(--ink-2);
+  transition:color var(--d-ui) ease, border-color var(--d-ui) ease, background-color var(--d-ui) ease;
+}
+.chip input:checked + span{ background:var(--ink); border-color:var(--ink); color:var(--void); }
+.chip input:focus-visible + span{ outline:2px solid var(--brass); outline-offset:3px; }
+@media (hover:hover) and (pointer:fine){ .chip input:not(:checked):hover + span{ border-color:var(--ink-2); color:var(--ink); } }
+.form__foot{ margin-top:2.25rem; display:flex; flex-wrap:wrap; gap:1rem; align-items:center; }
+.form__msg{ font-size:0.8125rem; color:var(--brass); min-height:1.2em; }
+.contact__direct{ margin-top:2.5rem; display:grid; gap:0.9rem; }
+.contact__direct a{ display:flex; align-items:baseline; justify-content:space-between; gap:1rem; padding-bottom:0.8rem; border-bottom:1px solid var(--line); transition:border-color var(--d-ui) ease; }
+.contact__direct .k{ font-size:0.6875rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-3); }
+.contact__direct .v{ font-size:0.9375rem; }
+@media (hover:hover) and (pointer:fine){ .contact__direct a:hover{ border-color:var(--brass); } .contact__direct a:hover .v{ color:var(--brass); } }
+
+/* 16 — footer ------------------------------------------------ */
+.footer{ border-top:1px solid var(--line); padding-block:2.5rem 3rem; }
+.footer__grid{ display:flex; flex-wrap:wrap; gap:1.5rem 2.5rem; align-items:center; }
+.footer__links{ display:flex; gap:1.5rem; margin-left:auto; }
+.footer__links a{ font-size:0.6875rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-3); transition:color var(--d-ui) ease; }
+@media (hover:hover) and (pointer:fine){ .footer__links a:hover{ color:var(--ink); } }
+.footer__meta{ margin-top:2rem; display:flex; flex-wrap:wrap; gap:0.5rem 1.5rem; }
+
+/* 17 — command palette --------------------------------------- */
+.palette{
+  position:fixed; inset:0; z-index:var(--z-palette); display:none;
+  background:oklch(0.12 0.006 150 / 0.74); padding:clamp(3rem,12vh,8rem) var(--gutter) 2rem;
+}
+.palette[data-open="true"]{ display:block; }
+.palette__box{ width:min(100%,560px); margin-inline:auto; background:var(--void-2); border:1px solid var(--line-strong); }
+.palette__input{ width:100%; border:0; border-bottom:1px solid var(--line); padding:1.1rem 1.25rem; font-size:0.9375rem; }
+.palette__input:focus{ border-bottom-color:var(--line); }
+.palette__list{ list-style:none; margin:0; padding:0.5rem; max-height:min(48vh,360px); overflow-y:auto; }
+.palette__list li button{
+  width:100%; display:flex; align-items:center; gap:1rem; padding:0.7rem 0.85rem; text-align:left;
+  font-size:0.875rem; color:var(--ink-2);
+}
+.palette__list li button .k{ font-family:var(--mono); font-size:0.6875rem; color:var(--ink-3); margin-left:auto; }
+.palette__list li[data-active="true"] button{ background:var(--void-3); color:var(--ink); }
+.palette__empty{ padding:1.25rem; font-size:0.875rem; color:var(--ink-3); }
+.palette__foot{ display:flex; gap:1.25rem; padding:0.75rem 1.25rem; border-top:1px solid var(--line); font-family:var(--mono); font-size:0.6875rem; color:var(--ink-3); }
+
+/* 18 — motion ------------------------------------------------ */
+html.js .rv{ opacity:0; transform:translateY(14px); }
+html.js .rv.in{ opacity:1; transform:none; transition:opacity var(--d-reveal) var(--e-out), transform var(--d-reveal) var(--e-out); }
+html.js .rv.in{ transition-delay:var(--dly,0ms); }
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{ animation-duration:1ms !important; animation-iteration-count:1 !important; transition-duration:1ms !important; transition-delay:0s !important; }
+  html.js .rv{ opacity:1; transform:none; }
+  .loader{ display:none !important; }
+  .scrollcue .bar::after{ display:none; }
+}
+
+/* 19 — responsive -------------------------------------------- */
+@media (max-width:1080px){
+  .hero__lead{ grid-column:1 / span 12; }
+  .frame{ grid-column:1 / span 12; margin-top:2.5rem; }
+  .ethos__claim{ grid-column:1 / span 12; }
+  .ethos__aside{ grid-column:1 / span 12; margin-top:2.5rem; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); }
+  .plate__frame,.plate:nth-child(even) .plate__frame{ grid-column:1 / span 12; grid-row:auto; }
+  .plate__body,.plate:nth-child(even) .plate__body{ grid-column:1 / span 12; grid-row:auto; }
+  .case__rail{ display:none; }
+  .case__chapters{ grid-column:1 / span 12; }
+  .contact__lead,.contact__form{ grid-column:1 / span 12; }
+  .contact__form{ margin-top:3rem; }
+}
+@media (max-width:720px){
+  .nav{ display:none; }
+  .burger{ display:block; }
+  .header{ padding-block:0.9rem; }
+  .hero{ min-height:92svh; }
+  .plate__meta .row{ grid-template-columns:5.5rem 1fr; }
+  .step{ grid-template-columns:2.5rem 1fr; }
+  .tl__row{ grid-template-columns:1fr; gap:0.75rem; }
+  .footer__links{ margin-left:0; }
+  .case__facts{ grid-template-columns:1fr 1fr; }
+}
+@media (max-width:420px){
+  .btn{ padding:0.9em 1.1em; letter-spacing:0.1em; }
+}
+@media print{
+  .header,.loader,.palette,.scrollcue,body::after{ display:none !important; }
+  body{ background:#fff; color:#111; }
+}
+</style>
+</head>
+<body>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div>
+    <div class="loader__mark">Joris VRR</div>
+    <div class="loader__line"></div>
+  </div>
+</div>
+
+<a class="skip" href="#work">Skip to work</a>
+
+<header class="header" id="header">
+  <a class="wordmark" href="#top" aria-label="Joris VRR, home"><span class="mk" aria-hidden="true"></span>Joris VRR</a>
+  <nav class="nav" aria-label="Primary">
+    <a href="#work" data-nav>Work</a>
+    <a href="#about" data-nav>About</a>
+    <a href="#lab" data-nav>Lab</a>
+    <a href="#services" data-nav>Services</a>
+    <a href="#contact" data-nav>Contact</a>
+    <button class="kbd" id="paletteOpen" aria-label="Open command palette"><span id="kbdKey">Ctrl</span> K</button>
+  </nav>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="sheet">
+    <span></span><span></span>
+  </button>
+</header>
+
+<div class="sheet" id="sheet" data-open="false" role="dialog" aria-modal="true" aria-label="Menu">
+  <button class="sheet__close" id="sheetClose">Close</button>
+  <a href="#work">Work</a>
+  <a href="#about">About</a>
+  <a href="#lab">Lab</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+  <p class="caption"><span class="idx">NL</span> <b>Leiden</b> · Available for projects</p>
+</div>
+
+<main id="top">
+
+<!-- HERO ---------------------------------------------------- -->
+<section class="hero wrap" aria-labelledby="heroTitle">
+  <div class="hero__inner">
+    <div class="hero__lead">
+      <p class="caption rv"><span class="idx">01</span> Joris VRR · Software developer and digital builder · Leiden, NL</p>
+      <h1 class="display hero__statement rv" id="heroTitle" style="--dly:60ms">Technology is the tool.<br>The <em>business</em> is the point.</h1>
+      <p class="hero__sub rv" style="--dly:120ms">I design and build websites, web applications and AI systems for small businesses. Every project starts with the problem the business actually has, not with the framework I feel like using.</p>
+      <div class="hero__cta rv" style="--dly:180ms">
+        <a class="btn btn--solid" href="#work">View work <span class="arw" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn--ghost" href="#contact">Let's talk</a>
+      </div>
+    </div>
+
+    <div class="frame rv" style="--dly:240ms" aria-label="Current status">
+      <span class="frame__corner tl" aria-hidden="true"></span><span class="frame__corner tr" aria-hidden="true"></span>
+      <span class="frame__corner bl" aria-hidden="true"></span><span class="frame__corner br" aria-hidden="true"></span>
+      <dl>
+        <div class="row"><dt>Local time</dt><dd><span class="live"><span class="dot dot--brass" aria-hidden="true"></span><span id="clock">--:--</span> CET</span></dd></div>
+        <div class="row"><dt>Base</dt><dd id="fBase">Leiden, NL</dd></div>
+        <div class="row"><dt>Now building</dt><dd id="fNow">CORTEX</dd></div>
+        <div class="row"><dt>Last shipped</dt><dd id="fLast">Atelier</dd></div>
+        <div class="row"><dt>Status</dt><dd><span class="live"><span class="dot" aria-hidden="true"></span><span id="fStatus">Taking new projects</span></span></dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="scrollcue caption" aria-hidden="true"><span class="bar"></span> Scroll</div>
+</section>
+
+<!-- ETHOS --------------------------------------------------- -->
+<section class="band wrap" id="about" aria-labelledby="aboutTitle">
+  <div class="rule"><span class="rule__dot" aria-hidden="true"></span><span class="rule__name">About</span></div>
+  <div class="grid ethos__grid">
+    <div class="ethos__claim">
+      <h2 class="h2 rv" id="aboutTitle">A business owner should not have to understand the technology. They should be able to say what they want to <em>achieve</em>.</h2>
+      <p class="body rv" style="--dly:60ms; margin-top:2rem">My job is to understand the problem, pick the right technology, and turn the idea into something that works. Sometimes that is a website. Sometimes it is an automated workflow, a custom application, or an AI system that removes an hour of repetitive work every day.</p>
+      <p class="body rv" style="--dly:90ms">I work with small businesses because that is where technology changes the most. A well built site makes a small company look established. Automation gives a small team back its week. A custom tool removes the spreadsheets nobody wants to maintain.</p>
+      <div class="rv" style="--dly:120ms; margin-top:2.5rem"><a class="link" href="#contact">Work with me <span class="arw" aria-hidden="true">&rarr;</span></a></div>
+    </div>
+
+    <div class="ethos__aside">
+      <div class="split rv" style="--dly:60ms">
+        <h3>The developer</h3>
+        <p>How is this actually built, deployed and maintained without becoming someone else's problem later?</p>
+      </div>
+      <div class="split rv" style="--dly:90ms">
+        <h3>The problem solver</h3>
+        <p>Should this be built at all, and what changes for the business once it exists?</p>
+      </div>
+      <div class="split rv" style="--dly:120ms">
+        <h3>Currently</h3>
+        <p>Freelance work under jorisvrr/webdev, and starting HBO ICT at De Haagse Hogeschool in September 2026.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK ---------------------------------------------------- -->
+<section class="band wrap" id="work" aria-labelledby="workTitle">
+  <div class="rule"><span class="rule__dot" aria-hidden="true"></span><span class="rule__name">Selected work · 05 plates</span></div>
+  <h2 class="h2 rv" id="workTitle" style="max-width:18ch">Five things I built, and <em>why</em> they exist.</h2>
+
+  <div class="plates" style="margin-top:clamp(3rem,8vh,5.5rem)">
+
+    <article class="plate rv">
+      <div class="plate__frame">
+        <span class="plate__num" aria-hidden="true">01</span>
+        <div class="plate__media"><span class="slot">Screenshot slot · 1600 &times; 1000</span><span class="plate__sweep" aria-hidden="true"></span></div>
+      </div>
+      <div class="plate__body">
+        <p class="caption">ATS Valkenburg · Valkenburg ZH · 2026 · <b>Client</b></p>
+        <h3 class="h3 plate__title">Auto Technisch <em>Specialisten</em></h3>
+        <p class="plate__line">An independent garage that looked smaller online than it is in the workshop. Full rebrand and a new multi page site built around trust.</p>
+        <dl class="plate__meta">
+          <div class="row"><dt>Role</dt><dd>Brand, design, build</dd></div>
+          <div class="row"><dt>Built</dt><dd>Brand system, sitemap, copy, multi page site, SEO, loading sequence</dd></div>
+          <div class="row"><dt>Stack</dt><dd>Static multi page build, custom design system</dd></div>
+        </dl>
+        <div class="plate__actions">
+          <a class="btn btn--ghost" href="https://atsvalkenburg.nl" target="_blank" rel="noopener">Live site <span class="arw" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn--ghost" href="#case-ats" data-case="ats">Case study</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="plate rv">
+      <div class="plate__frame">
+        <span class="plate__num" aria-hidden="true">02</span>
+        <div class="plate__media"><span class="slot">Screenshot slot · 1600 &times; 1000</span><span class="plate__sweep" aria-hidden="true"></span></div>
+      </div>
+      <div class="plate__body">
+        <p class="caption">Halo · Product concept · 2026 · <b>Own product</b></p>
+        <h3 class="h3 plate__title">Halo, recognition <em>at work</em></h3>
+        <p class="plate__line">A recognition platform for companies of five to a hundred and fifty people, plus the twelve page flagship site that sells it. Product thinking first, pixels second.</p>
+        <dl class="plate__meta">
+          <div class="row"><dt>Role</dt><dd>Product, design, development</dd></div>
+          <div class="row"><dt>Built</dt><dd>Product specification, brand system, 12 page marketing site</dd></div>
+          <div class="row"><dt>Stack</dt><dd>Static HTML build, Python build step, zero runtime dependencies</dd></div>
+        </dl>
+        <div class="plate__actions">
+          <a class="btn btn--ghost" href="https://haloflagshipstore.vercel.app" target="_blank" rel="noopener">Live site <span class="arw" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn--ghost" href="#case-halo" data-case="halo">Case study</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="plate rv">
+      <div class="plate__frame">
+        <span class="plate__num" aria-hidden="true">03</span>
+        <div class="plate__media"><span class="slot">Screenshot slot · 1600 &times; 1000</span><span class="plate__sweep" aria-hidden="true"></span></div>
+      </div>
+      <div class="plate__body">
+        <p class="caption">CORTEX · In development · 2026 · <b>Own product</b></p>
+        <h3 class="h3 plate__title">CORTEX, a second <em>brain</em></h3>
+        <p class="plate__line">Speak a thought, and it gets titled, tagged and connected to everything related to it. The home screen is the network itself, rendered in 3D.</p>
+        <dl class="plate__meta">
+          <div class="row"><dt>Role</dt><dd>Product, design, development</dd></div>
+          <div class="row"><dt>Built</dt><dd>Capture to connection loop, 3D thought network, AI processing pipeline</dd></div>
+          <div class="row"><dt>Stack</dt><dd>Next.js, TypeScript, three.js, Supabase, OpenAI API, PWA</dd></div>
+        </dl>
+        <div class="plate__actions">
+          <a class="btn btn--ghost" href="#case-cortex" data-case="cortex">Case study</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="plate rv">
+      <div class="plate__frame">
+        <span class="plate__num" aria-hidden="true">04</span>
+        <div class="plate__media"><span class="slot">Screenshot slot · 1600 &times; 1000</span><span class="plate__sweep" aria-hidden="true"></span></div>
+      </div>
+      <div class="plate__body">
+        <p class="caption">Atelier · Personal system · 2026 · <b>Own product</b></p>
+        <h3 class="h3 plate__title">Atelier, a personal <em>operating system</em></h3>
+        <p class="plate__line">A single file web app on the iPhone home screen that holds the day, the study schedule, deep work and every project. It syncs two ways with Notion without leaking a token to the browser.</p>
+        <dl class="plate__meta">
+          <div class="row"><dt>Role</dt><dd>Everything</dd></div>
+          <div class="row"><dt>Built</dt><dd>Five section PWA, offline storage, non destructive migrations, two way Notion sync</dd></div>
+          <div class="row"><dt>Stack</dt><dd>Single file HTML, Vercel serverless function, Notion API</dd></div>
+        </dl>
+        <div class="plate__actions">
+          <a class="btn btn--ghost" href="https://atelier-nine-beta.vercel.app" target="_blank" rel="noopener">Live app <span class="arw" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn--ghost" href="#case-atelier" data-case="atelier">Case study</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="plate rv">
+      <div class="plate__frame">
+        <span class="plate__num" aria-hidden="true">05</span>
+        <div class="plate__media"><span class="slot">Screenshot slot · 1600 &times; 1000</span><span class="plate__sweep" aria-hidden="true"></span></div>
+      </div>
+      <div class="plate__body">
+        <p class="caption">BEBO Betonboren · Rotterdam region · 2026 · <b>Client</b></p>
+        <h3 class="h3 plate__title">BEBO, drilling <em>through concrete</em></h3>
+        <p class="plate__line">A specialist contractor with a working site and no structured way to receive a job request. Audit, SEO foundation, and a standalone intake form that asks the questions the office used to ask by phone.</p>
+        <dl class="plate__meta">
+          <div class="row"><dt>Role</dt><dd>Audit, SEO, development</dd></div>
+          <div class="row"><dt>Built</dt><dd>Full site audit, SEO infrastructure, client intake form</dd></div>
+          <div class="row"><dt>Stack</dt><dd>Flask on Railway, static intake form on Vercel, Web3Forms</dd></div>
+        </dl>
+        <div class="plate__actions">
+          <a class="btn btn--ghost" href="https://bebointake.vercel.app" target="_blank" rel="noopener">Intake form <span class="arw" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn--ghost" href="#case-bebo" data-case="bebo">Case study</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- PROCESS ------------------------------------------------- -->
+<section class="band wrap" id="process" aria-labelledby="processTitle">
+  <div class="rule"><span class="rule__dot" aria-hidden="true"></span><span class="rule__name">How I build</span></div>
+  <h2 class="h2 rv" id="processTitle" style="max-width:20ch">Six steps. The first one is not <em>code</em>.</h2>
+  <div class="steps rv" style="margin-top:clamp(2.5rem,6vh,4rem)">
+    <div class="step"><div class="step__n">01</div><div><h3 class="step__t">Understand</h3><p class="step__d">What takes too long, where do customers get stuck, and what would make the biggest difference. The answer decides the technology, never the other way around.</p></div></div>
+    <div class="step"><div class="step__n">02</div><div><h3 class="step__t">Design</h3><p class="step__d">Map the experience and the architecture together. Screens, data model and edge cases on the same page before anything is built.</p></div></div>
+    <div class="step"><div class="step__n">03</div><div><h3 class="step__t">Build</h3><p class="step__d">Ship the smallest useful version. Real content, real data, no placeholder logic hiding an unsolved problem.</p></div></div>
+    <div class="step"><div class="step__n">04</div><div><h3 class="step__t">Test</h3><p class="step__d">Find what is broken on a slow phone, on a keyboard, at 320 pixels wide, and with the client using it in a way I did not predict.</p></div></div>
+    <div class="step"><div class="step__n">05</div><div><h3 class="step__t">Refine</h3><p class="step__d">Cut what nobody uses. Fix the two things that annoy the client every day. Performance and accessibility are part of this step, not a later project.</p></div></div>
+    <div class="step"><div class="step__n">06</div><div><h3 class="step__t">Ship</h3><p class="step__d">Deploy, hand over documentation the client can actually read, and stay reachable when the business changes.</p></div></div>
+  </div>
+</section>
+
+<!-- SERVICES ------------------------------------------------ -->
+<section class="band wrap" id="services" aria-labelledby="servicesTitle">
+  <div class="rule"><span class="rule__dot" aria-hidden="true"></span><span class="rule__name">What I build</span></div>
+  <h2 class="h2 rv" id="servicesTitle" style="max-width:20ch">Four ways this usually <em>starts</em>.</h2>
+  <div class="services rv" style="margin-top:clamp(2.5rem,6vh,4rem)">
+    <div class="service">
+      <h3>Websites</h3>
+      <p>A site that represents the company as it actually is, answers the questions customers ask, and makes them act.</p>
+      <ul><li>Business sites and landing pages</li><li>Portfolio and brand sites</li><li>E-commerce and booking flows</li><li>SEO foundation and analytics</li></ul>
+    </div>
+    <div class="service">
+      <h3>Web applications</h3>
+      <p>Software shaped around how the company works, instead of a company reshaped around generic software.</p>
+      <ul><li>Dashboards and internal tools</li><li>Customer and booking systems</li><li>Admin and intake flows</li><li>Client portals</li></ul>
+    </div>
+    <div class="service">
+      <h3>AI systems</h3>
+      <p>AI where it removes friction, and nowhere else. The point is the hour it gives back, not the label on it.</p>
+      <ul><li>Assistants and chatbots</li><li>Automated customer communication</li><li>Internal knowledge systems</li><li>Integrations with existing software</li></ul>
+    </div>
+    <div class="service">
+      <h3>Digital products</h3>
+      <p>From the first conversation to a deployed product that can keep growing with the business.</p>
+      <ul><li>Concept and product definition</li><li>Brand and interface design</li><li>Development and deployment</li><li>Maintenance and iteration</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- STACK --------------------------------------------------- -->
+<section class="band band--tight wrap" id="stack" aria-labelledby="stackTitle">
+  <div class="rule"><span class="rule__dot" aria-hidden="true"></span><span class="rule__name">Tools</span></div>
+  <h2 class="h2 rv" id="stackTitle" style="max-width:22ch; margin-bottom:clamp(2rem,5vh,3rem)">What I reach for, grouped by what it <em>does</em>.</h2>
+  <div class="stack rv">
+    <div class="stack__col"><h3>Interface</h3><ul><li>HTML and CSS</li><li>JavaScript, TypeScript</li><li>React, Next.js</li><li>Tailwind</li><li>three.js</li></ul></div>
+    <div class="stack__col"><h3>Server</h3><ul><li>Python, Flask</li><li>Node.js</li><li>Serverless functions</li><li>REST APIs</li></ul></div>
+    <div class="stack__col"><h3>Data</h3><ul><li>PostgreSQL</li><li>SQLite</li><li>Supabase</li><li>Notion API</li></ul></div>
+    <div class="stack__col"><h3>Infrastructure</h3><ul><li>Vercel</li><li>Railway</li><li>Git and GitHub</li><li>Static builds and CI</li></ul></div>
+    <div class="stack__col"><h3>AI and automation</h3><ul><li>OpenAI API</li><li>Claude API</li><li>Speech to text</li><li>Workflow automation</li></ul></div>
+    <div class="stack__col"><h3>Design</h3><ul><li>Design systems and tokens</li><li>Figma and Adobe CC</li><li>Motion and interaction</li><li>Accessibility, WCAG AA</li></ul></div>
+  </div>
+  <p class="stack__note rv">Everything listed here appears in the work above or in the lab below. If a tool is not on this list, I have not shipped anything with it yet.</p>
+</section>
+
+<!-- LAB ----------------------------------------------------- -->
+<section class="band wrap" id="lab" aria-labelledby="labTitle">
+  <div class="rule"><span class="rule__dot" aria-hidden="true"></span><span class="rule__name">Lab</span></div>
+  <div class="grid" style="align-items:end">
+    <h2 class="h2 rv" id="labTitle" style="grid-column:1 / span 7; max-width:20ch">I do not only build when someone <em>pays</em> me.</h2>
+    <p class="rv" style="grid-column:9 / span 4; color:var(--ink-2); font-size:0.9375rem">Concepts, experiments and things that exist because I wanted to find out whether they would work. Some are live, some are unfinished on purpose.</p>
+  </div>
+
+  <div class="lab rv" style="margin-top:clamp(2.5rem,6vh,4rem)">
+    <a class="lab__item" href="https://leidenlions.vercel.app" target="_blank" rel="noopener">
+      <h3>Leiden Lions</h3>
+      <p>Ice hockey club site with a canvas rink hero and a puck that obeys physics. Built to show Dutch clubs what they could have.</p>
+      <span class="foot"><span class="state"><span class="dot" aria-hidden="true"></span>Live</span><span class="go" aria-hidden="true">&rarr;</span></span>
+    </a>
+    <a class="lab__item" href="https://amsterdamtigers.vercel.app" target="_blank" rel="noopener">
+      <h3>Amsterdam Tigers</h3>
+      <p>Bigger club build: match center, webshop scaffold, two languages, and a loading sequence that lands on the crest.</p>
+      <span class="foot"><span class="state"><span class="dot" aria-hidden="true"></span>Live</span><span class="go" aria-hidden="true">&rarr;</span></span>
+    </a>
+    <a class="lab__item" href="https://toronto-maple-leaves.vercel.app" target="_blank" rel="noopener">
+      <h3>Maple Leafs concept</h3>
+      <p>A North American club site rebuilt to the standard I want Dutch clubs to aim at.</p>
+      <span class="foot"><span class="state"><span class="dot" aria-hidden="true"></span>Live</span><span class="go" aria-hidden="true">&rarr;</span></span>
+    </a>
+    <div class="lab__item">
+      <h3>Hurricanes redesign</h3>
+      <p>A production NHL site taken apart and rebuilt. Zone entry page transitions, tactical type, no purple gradients anywhere.</p>
+      <span class="foot"><span class="state"><span class="dot" aria-hidden="true" style="background:var(--brass)"></span>In progress</span></span>
+    </div>
+    <div class="lab__item">
+      <h3>AUREX</h3>
+      <p>A private banking PWA on mock data. An exercise in restraint: gold on black, no chart junk, every state designed.</p>
+      <span class="foot"><span class="state"><span class="dot" aria-hidden="true" style="background:var(--brass)"></span>Concept</span></span>
+    </div>
+    <div class="lab__item">
+      <h3>HQ</h3>
+      <p>Single file business tool: invoices, subscriptions, clients and time tracking, with a print safe invoice view.</p>
+      <span class="foot"><span class="state"><span class="dot" aria-hidden="true"></span>In use</span></span>
+    </div>
+    <div class="lab__item">
+      <h3>MKB chatbot</h3>
+      <p>A chatbot product built on Flask and sold to Dutch restaurants, salons, gyms and driving schools. My first real product.</p>
+      <span class="foot"><span class="state"><span class="dot" aria-hidden="true" style="background:var(--ink-3)"></span>Archived</span></span>
+    </div>
+    <div class="lab__item">
+      <h3>Lead tracker</h3>
+      <p>A standalone tracker for outreach: local storage, filtering and CSV export. Built because a spreadsheet kept losing the thread.</p>
+      <span class="foot"><span class="state"><span class="dot" aria-hidden="true"></span>In use</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE ---------------------------------------------- -->
+<section class="band band--tight wrap" id="experience" aria-labelledby="expTitle">
+  <div class="rule"><span class="rule__dot" aria-hidden="true"></span><span class="rule__name">Track</span></div>
+  <h2 class="h2 rv" id="expTitle" style="max-width:20ch; margin-bottom:clamp(2rem,5vh,3rem)">Short version.</h2>
+  <div class="tl rv">
+    <div class="tl__row">
+      <div class="tl__yr">2026 &mdash; present</div>
+      <div>
+        <h3 class="tl__role">HBO ICT student</h3>
+        <p class="tl__org">De Haagse Hogeschool · Business &amp; Data Management</p>
+        <ul class="tl__pts"><li>Starting September 2026, after the shared ICT foundation programme</li><li>Focus on where software meets the business case, which is the same place my client work sits</li></ul>
+      </div>
+    </div>
+    <div class="tl__row">
+      <div class="tl__yr">2025 &mdash; present</div>
+      <div>
+        <h3 class="tl__role">Freelance developer</h3>
+        <p class="tl__org">jorisvrr/webdev · Leiden, NL</p>
+        <ul class="tl__pts"><li>Websites, web applications and AI systems for small businesses</li><li>Client work including a full garage rebrand and a contractor intake system</li><li>Built and sold a chatbot product to Dutch small businesses</li></ul>
+      </div>
+    </div>
+    <div class="tl__row">
+      <div class="tl__yr">Before</div>
+      <div>
+        <h3 class="tl__role">Videography and cinematography</h3>
+        <p class="tl__org">Independent</p>
+        <ul class="tl__pts"><li>Where the eye for framing, pacing and light came from, which is most of what design is</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT ------------------------------------------------- -->
+<section class="band wrap" id="contact" aria-labelledby="contactTitle">
+  <div class="rule"><span class="rule__dot" aria-hidden="true"></span><span class="rule__name">Contact</span></div>
+  <div class="grid contact__grid">
+    <div class="contact__lead">
+      <h2 class="h2 rv" id="contactTitle">Let's build <em>something</em>.</h2>
+      <p class="body rv" style="--dly:60ms; margin-top:1.5rem">Tell me what is not working yet. If I am the wrong person for it, I will say so and point you at the right one.</p>
+      <div class="contact__direct rv" style="--dly:90ms">
+        <a id="linkMail" href="#"><span class="k">Email</span><span class="v" id="mailText">&mdash;</span></a>
+        <a id="linkGh" href="#" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v" id="ghText">&mdash;</span></a>
+        <a id="linkLi" href="#" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v" id="liText">&mdash;</span></a>
+      </div>
+    </div>
+
+    <form class="contact__form rv" id="brief" style="--dly:60ms" novalidate>
+      <fieldset style="border:0; padding:0; margin:0">
+        <legend class="caption" style="padding:0">What are you looking to build?</legend>
+        <div class="chips" style="margin-top:1rem">
+          <label class="chip"><input type="radio" name="kind" value="Website" checked><span>Website</span></label>
+          <label class="chip"><input type="radio" name="kind" value="Web app"><span>Web app</span></label>
+          <label class="chip"><input type="radio" name="kind" value="AI system"><span>AI system</span></label>
+          <label class="chip"><input type="radio" name="kind" value="E-commerce"><span>E-commerce</span></label>
+          <label class="chip"><input type="radio" name="kind" value="Not sure yet"><span>Not sure yet</span></label>
+        </div>
+      </fieldset>
+
+      <label class="field"><span>Name</span><input type="text" name="name" required autocomplete="name" placeholder="Your name"></label>
+      <label class="field"><span>Email</span><input type="email" name="email" required autocomplete="email" placeholder="name@company.com"></label>
+      <label class="field"><span>Company (optional)</span><input type="text" name="company" autocomplete="organization" placeholder="Company name"></label>
+      <label class="field"><span>What should it do?</span><textarea name="details" required placeholder="The problem, who it is for, and what needs to change."></textarea></label>
+
+      <div class="form__foot">
+        <button class="btn btn--solid" type="submit">Send brief <span class="arw" aria-hidden="true">&rarr;</span></button>
+        <p class="form__msg" id="formMsg" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!--
+  PROOF SLOT. Drop in when the first testimonial or logo exists. Nothing here is invented on purpose.
+  <blockquote class="quote"><p>Quote</p><cite>Name, Company</cite></blockquote>
+-->
+
+</main>
+
+<footer class="footer wrap">
+  <div class="footer__grid">
+    <a class="wordmark" href="#top"><span class="mk" aria-hidden="true"></span>Joris VRR</a>
+    <p class="caption" style="margin:0">Software developer · Designer · Builder</p>
+    <nav class="footer__links" aria-label="Footer">
+      <a id="fMail" href="#">Email</a>
+      <a id="fGh" href="#" target="_blank" rel="noopener">GitHub</a>
+      <a id="fLi" href="#" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </div>
+  <div class="footer__meta caption">
+    <span>&copy; <span id="year">2026</span> Joris VRR</span>
+    <span>Leiden, Netherlands</span>
+    <span>Built from scratch. No template, no framework.</span>
+  </div>
+</footer>
+
+<!-- CASE STUDIES --------------------------------------------
+     Rendered inline for search engines and for no-JS visitors.
+     With JS they become full screen panels opened from the plates.
+--------------------------------------------------------------->
+<div class="cases" id="cases">
+
+<article class="case" id="case-ats" data-panel="ats" data-open="false" aria-labelledby="caseAtsTitle">
+  <div class="case__bar"><span class="nm">Case 01 · ATS Valkenburg</span><button class="case__close" data-close>Close <span aria-hidden="true">&times;</span></button></div>
+  <div class="case__inner wrap">
+    <header class="case__head">
+      <p class="caption">Client · Valkenburg ZH, NL · 2026</p>
+      <h2 class="h2" id="caseAtsTitle">A garage that deserved to look like the <em>workshop</em> it is.</h2>
+      <p>Auto Technisch Specialisten is an independent garage competing with dealer workshops that have marketing departments. The brief was a complete rebrand and a new site, delivered to the standard a much larger company would expect.</p>
+    </header>
+    <dl class="case__facts">
+      <div><dt>Role</dt><dd>Brand, design, development</dd></div>
+      <div><dt>Stack</dt><dd>Static multi page build</dd></div>
+      <div><dt>Year</dt><dd>2026</dd></div>
+      <div><dt>Status</dt><dd>Live</dd></div>
+    </dl>
+    <div class="case__body">
+      <nav class="case__rail" data-rail aria-label="Chapters"></nav>
+      <div class="case__chapters">
+        <section id="ats-problem"><h3><span class="n" aria-hidden="true">01</span>Problem</h3><p>The existing site did not carry the weight of the business behind it. For an independent garage, the website is the trust test: a customer decides whether to hand over a car worth thousands based on how the company presents itself. The old site was the weakest part of the company.</p><p>It arrived as forty nine phone screenshots and a written brief. The first job was turning that into an actual inventory of what existed, what mattered, and what could go.</p></section>
+        <section id="ats-idea"><h3><span class="n" aria-hidden="true">02</span>Idea</h3><p>Not a redesign of the pages, a rebrand of the company as it appears online. Brand strategy, design system, sitemap, copy, SEO and conversion treated as one deliverable instead of five separate ones.</p></section>
+        <section id="ats-process"><h3><span class="n" aria-hidden="true">03</span>Process</h3><ul><li>Audit the old site page by page from the supplied screenshots</li><li>Map every service the garage actually sells against what the site claimed</li><li>Rebuild the sitemap around what a customer is trying to find out</li><li>Write the copy first, design around the real words</li></ul></section>
+        <section id="ats-design"><h3><span class="n" aria-hidden="true">04</span>Design</h3><p>The navy and purple from the existing logo stayed. Replacing a colour scheme that customers already recognise from the building and the invoices would have thrown away the only brand equity the company had. The system was built to make those two colours look deliberate rather than inherited.</p><p>Everything else carries the upgrade: type scale, spacing rhythm, photography treatment and a loading sequence that sets the tone before the first section appears.</p></section>
+        <section id="ats-development"><h3><span class="n" aria-hidden="true">05</span>Development</h3><p>A static multi page build. No CMS, because the content changes a few times a year and a database would have added a maintenance surface nobody at the garage wants to own. Full favicon set, metadata, semantic structure and an interactive layer that responds to the visitor without getting in the way.</p></section>
+        <section id="ats-challenges"><h3><span class="n" aria-hidden="true">06</span>Challenges</h3><p>The brief asked for a rebrand at a scale usually delivered by an agency team. Scoping that into something one person could ship, without dropping the parts that actually move the business, was the real work. The second challenge was the palette: making an inherited navy and purple feel intentional rather than dated.</p></section>
+        <section id="ats-solution"><h3><span class="n" aria-hidden="true">07</span>Solution</h3><p>A complete multi page site with a documented design system, rewritten service pages, an SEO foundation, accessibility built in rather than retrofitted, and a loading and motion layer that makes the site feel considered from the first second.</p></section>
+        <section id="ats-result"><h3><span class="n" aria-hidden="true">08</span>Result</h3><p>Live at atsvalkenburg.nl. Measured outcome to be added once the first period of analytics is in: <span class="todo">enquiries before and after, organic traffic, page speed</span>. I would rather leave this empty than publish a number I cannot show you.</p></section>
+      </div>
+    </div>
+    <div class="case__foot">
+      <a class="btn btn--ghost" href="https://atsvalkenburg.nl" target="_blank" rel="noopener">Visit the site <span class="arw" aria-hidden="true">&rarr;</span></a>
+      <a class="link" href="#contact" data-close>Start something similar</a>
+    </div>
+  </div>
+</article>
+
+<article class="case" id="case-halo" data-panel="halo" data-open="false" aria-labelledby="caseHaloTitle">
+  <div class="case__bar"><span class="nm">Case 02 · Halo</span><button class="case__close" data-close>Close <span aria-hidden="true">&times;</span></button></div>
+  <div class="case__inner wrap">
+    <header class="case__head">
+      <p class="caption">Own product · Product and marketing site · 2026</p>
+      <h2 class="h2" id="caseHaloTitle">Recognition at work, without turning it into <em>HR software</em>.</h2>
+      <p>Halo is a private workspace where colleagues send each other recognition cards. It is deliberately not performance management, not a social network, and not another dashboard nobody opens.</p>
+    </header>
+    <dl class="case__facts">
+      <div><dt>Role</dt><dd>Product, brand, development</dd></div>
+      <div><dt>Stack</dt><dd>Static HTML, Python build step</dd></div>
+      <div><dt>Scope</dt><dd>12 page flagship site</dd></div>
+      <div><dt>Status</dt><dd>Live, in development</dd></div>
+    </dl>
+    <div class="case__body">
+      <nav class="case__rail" data-rail aria-label="Chapters"></nav>
+      <div class="case__chapters">
+        <section id="halo-problem"><h3><span class="n" aria-hidden="true">01</span>Problem</h3><p>Companies of five to a hundred and fifty people have no tool for appreciation that does not immediately feel corporate. The existing category solves it with points dashboards and leaderboards, which turns a human moment into a performance metric and kills the thing it was supposed to encourage.</p></section>
+        <section id="halo-idea"><h3><span class="n" aria-hidden="true">02</span>Idea</h3><p>A company owned private workspace. You join with your work email, you send one recognition card a week, and cards are private by default unless the sender chooses otherwise. The scarcity is the feature: one card a week makes each one mean something.</p></section>
+        <section id="halo-process"><h3><span class="n" aria-hidden="true">03</span>Process</h3><p>Product before pixels. A full planning document covering positioning, the recognition economy, permissions, pricing and roadmap came first, with an explicit rule of no code and no folder structure during planning.</p><ul><li>Define what the product refuses to be, before defining what it is</li><li>Model the economy: who earns points, who is exempt, what points unlock</li><li>Decide where AI is allowed: assistive only, it never sends anything by itself</li><li>Only then design the site that sells it</li></ul></section>
+        <section id="halo-design"><h3><span class="n" aria-hidden="true">04</span>Design</h3><p>The interface is cool and recessive, the card is the warm, lit object. That single thesis resolved most design decisions: the product surface stays near neutral so the recognition card is always the brightest thing on screen.</p><p>A surface gets a hairline or a shadow, never both. Accent is capped at roughly five percent of any view. Motion uses exponential ease out only.</p></section>
+        <section id="halo-development"><h3><span class="n" aria-hidden="true">05</span>Development</h3><p>Twelve pages built as static HTML with a Python build step and no runtime dependencies. Section transitions are hard edges with a small radius rather than gradient fades, and dark bands run full bleed into each other so there is never a light seam between them.</p></section>
+        <section id="halo-challenges"><h3><span class="n" aria-hidden="true">06</span>Challenges</h3><p>The written brief asked for Next.js, React, Framer Motion and an installed component package. None of those existed in the project, which was static HTML with zero dependencies. I flagged the mismatch instead of quietly pretending the stack matched, because a client who thinks they are getting React and receives static HTML has a problem six months later.</p><p>The second challenge was the pricing and add-on content. It came from a reference mockup rather than a decision, so it ships as a clearly marked placeholder rather than as fact.</p></section>
+        <section id="halo-solution"><h3><span class="n" aria-hidden="true">07</span>Solution</h3><p>A twelve page flagship site with a custom loading system, page transitions, a full favicon package, no stock photography, and a product specification detailed enough to build against.</p></section>
+        <section id="halo-result"><h3><span class="n" aria-hidden="true">08</span>Result</h3><p>Live at haloflagshipstore.vercel.app. Whether Halo becomes a real business, stays a portfolio product, or turns into a client project is still an open decision. What it already proves is the part that is hard to fake: product definition, brand system and execution held together across twelve pages.</p></section>
+      </div>
+    </div>
+    <div class="case__foot">
+      <a class="btn btn--ghost" href="https://haloflagshipstore.vercel.app" target="_blank" rel="noopener">Visit the site <span class="arw" aria-hidden="true">&rarr;</span></a>
+      <a class="link" href="#contact" data-close>Talk about a product</a>
+    </div>
+  </div>
+</article>
+
+<article class="case" id="case-cortex" data-panel="cortex" data-open="false" aria-labelledby="caseCortexTitle">
+  <div class="case__bar"><span class="nm">Case 03 · CORTEX</span><button class="case__close" data-close>Close <span aria-hidden="true">&times;</span></button></div>
+  <div class="case__inner wrap">
+    <header class="case__head">
+      <p class="caption">Own product · In development · 2026</p>
+      <h2 class="h2" id="caseCortexTitle">Capture a thought in four seconds. Never <em>file</em> it.</h2>
+      <p>CORTEX is a mobile first second brain. You speak, and the system titles, summarises, tags and connects the thought to everything related to it. The user never organises anything by hand.</p>
+    </header>
+    <dl class="case__facts">
+      <div><dt>Role</dt><dd>Product, design, development</dd></div>
+      <div><dt>Stack</dt><dd>Next.js, TypeScript, three.js, Supabase, OpenAI</dd></div>
+      <div><dt>Platform</dt><dd>iOS PWA</dd></div>
+      <div><dt>Status</dt><dd>In development</dd></div>
+    </dl>
+    <div class="case__body">
+      <nav class="case__rail" data-rail aria-label="Chapters"></nav>
+      <div class="case__chapters">
+        <section id="cortex-problem"><h3><span class="n" aria-hidden="true">01</span>Problem</h3><p>Note apps fail at the moment of capture. By the time you have picked a notebook, a folder and three tags, the thought is gone or the app is closed. Every system that requires filing eventually becomes a graveyard.</p></section>
+        <section id="cortex-idea"><h3><span class="n" aria-hidden="true">02</span>Idea</h3><p>Move all the organising work to the machine. Capture, understand, connect, explore. The user does one thing: speak. Everything after that is automatic, and the reward for capturing is watching your own network grow.</p></section>
+        <section id="cortex-process"><h3><span class="n" aria-hidden="true">03</span>Process</h3><p>The riskiest part was the home screen: a real interactive 3D network of thought nodes, not a static image of one. So that got built first, as a single file prototype on seeded data, before any repository scaffold existed. If the network had not felt good to touch, the whole product concept was wrong.</p></section>
+        <section id="cortex-design"><h3><span class="n" aria-hidden="true">04</span>Design</h3><p>Near black with deep navy, purple and magenta, closer to deep space than to a SaaS dashboard. Node colour encodes type, ideas, knowledge, goals, inspiration, personal, problems, and node size encodes importance, so the network is readable before you tap anything.</p><p>Navigation floats on the right rather than sitting in a bottom bar, because the network needs the full screen and a thumb needs to reach it. The brand has no icon: the network is the identity.</p></section>
+        <section id="cortex-development"><h3><span class="n" aria-hidden="true">05</span>Development</h3><p>Next.js and TypeScript, three.js for the network, Supabase for auth and storage, MediaRecorder plus speech to text for capture, and an AI pass that returns title, summary, tags, category and connections in one structured response. Installed to the iPhone home screen as a PWA.</p></section>
+        <section id="cortex-challenges"><h3><span class="n" aria-hidden="true">06</span>Challenges</h3><p>Two hard problems. Making WebGL feel native on a phone, including drag, pinch and a slow idle float that never turns into motion sickness. And connection quality: an automatic link that is wrong is worse than no link, so the connection step has to be conservative enough to stay trustworthy.</p></section>
+        <section id="cortex-solution"><h3><span class="n" aria-hidden="true">07</span>Solution</h3><p>A working prototype of the 3D brain and home interface on seed data, validated before committing to the full stack, now being built out into the real application with capture, thought detail, intent based search, knowledge hubs and objectives.</p></section>
+        <section id="cortex-result"><h3><span class="n" aria-hidden="true">08</span>Result</h3><p>In development. Public prototype link and screenshots go here once the build is stable enough to show: <span class="todo">prototype URL, screens, first usage notes</span>.</p></section>
+      </div>
+    </div>
+    <div class="case__foot">
+      <a class="link" href="#contact" data-close>Ask me about this one</a>
+    </div>
+  </div>
+</article>
+
+<article class="case" id="case-atelier" data-panel="atelier" data-open="false" aria-labelledby="caseAtelierTitle">
+  <div class="case__bar"><span class="nm">Case 04 · Atelier</span><button class="case__close" data-close>Close <span aria-hidden="true">&times;</span></button></div>
+  <div class="case__inner wrap">
+    <header class="case__head">
+      <p class="caption">Own product · Personal system · 2026</p>
+      <h2 class="h2" id="caseAtelierTitle">One file, on the home screen, syncing both ways with <em>Notion</em>.</h2>
+      <p>Atelier is the system I actually run my day on. Five sections, installed on the iPhone home screen, with a serverless backend that talks to Notion without ever handing a token to the browser.</p>
+    </header>
+    <dl class="case__facts">
+      <div><dt>Role</dt><dd>Everything</dd></div>
+      <div><dt>Stack</dt><dd>Single file HTML, Vercel functions, Notion API</dd></div>
+      <div><dt>Platform</dt><dd>iOS PWA</dd></div>
+      <div><dt>Status</dt><dd>Live, in daily use</dd></div>
+    </dl>
+    <div class="case__body">
+      <nav class="case__rail" data-rail aria-label="Chapters"></nav>
+      <div class="case__chapters">
+        <section id="atelier-problem"><h3><span class="n" aria-hidden="true">01</span>Problem</h3><p>A calendar, a notes app and a habit tracker each hold a third of the picture, and the picture only exists in your head. The failure mode of every personal dashboard is the opposite one: it becomes so full that opening it is work.</p></section>
+        <section id="atelier-idea"><h3><span class="n" aria-hidden="true">02</span>Idea</h3><p>Design systems, not motivation. Optimise for consistency, low friction and things that compound. Five sections and nothing else: Daily, Academy, Schedule, Deep Work, Projects. If a feature does not survive a week of real use, it gets cut.</p></section>
+        <section id="atelier-process"><h3><span class="n" aria-hidden="true">03</span>Process</h3><p>Built, used, cut, rebuilt. The dashboard got too cluttered to use, so the next pass removed rather than added. Wellbeing tracking was dropped entirely because it was never going to be filled in honestly. The vision board became a Projects tab because that was the thing I actually opened.</p></section>
+        <section id="atelier-design"><h3><span class="n" aria-hidden="true">04</span>Design</h3><p>Quiet luxury: warm neutrals, ivory on espresso, a brass hairline, editorial serif, no gamification and no bright colour anywhere. A cypress green accent carries now and next semantics, brass carries live and done, so status is readable without a legend.</p><p>The identity is a serif A monogram in ivory with a brass rule under it, generated into a full icon set, favicon through maskable PWA icons. A film grain overlay gives the interface material texture.</p></section>
+        <section id="atelier-development"><h3><span class="n" aria-hidden="true">05</span>Development</h3><p>One HTML file, local storage with an in memory fallback so it never dies in a sandboxed browser, and a splash gated on font readiness rather than on a fake timer. The Notion bridge is a Vercel serverless function that keeps the integration token server side and auto discovers the child database from a page id.</p><ul><li>Two way sync with last edit wins</li><li>Deletes archive the Notion row, tombstones stop it resurrecting on the next pull</li><li>Offline safe with a dirty retry queue</li><li>Today's focus writes to one backing note and updates in place instead of creating duplicates</li></ul></section>
+        <section id="atelier-challenges"><h3><span class="n" aria-hidden="true">06</span>Challenges</h3><p>Sync is where personal apps quietly break. Deleting a note locally used to bring it straight back on the next pull, which is the classic distributed systems bug in miniature. Tombstones fixed it. Migrations were the other risk: every schema change ships as a non destructive versioned migration, so an existing install upgrades without losing anything a user typed.</p></section>
+        <section id="atelier-solution"><h3><span class="n" aria-hidden="true">07</span>Solution</h3><p>A native feeling five section PWA with onboarding, weekly review, export, offline support, a passcode gate on cold start, and a Notion database that stays in step with it in both directions.</p></section>
+        <section id="atelier-result"><h3><span class="n" aria-hidden="true">08</span>Result</h3><p>In daily use since it shipped, which is the only metric a personal tool has. The passcode is a soft gate against someone finding the URL, not real security, and it is documented as such rather than sold as a feature.</p></section>
+      </div>
+    </div>
+    <div class="case__foot">
+      <a class="btn btn--ghost" href="https://atelier-nine-beta.vercel.app" target="_blank" rel="noopener">Open the app <span class="arw" aria-hidden="true">&rarr;</span></a>
+      <a class="link" href="#contact" data-close>Want one for your team</a>
+    </div>
+  </div>
+</article>
+
+<article class="case" id="case-bebo" data-panel="bebo" data-open="false" aria-labelledby="caseBeboTitle">
+  <div class="case__bar"><span class="nm">Case 05 · BEBO Betonboren</span><button class="case__close" data-close>Close <span aria-hidden="true">&times;</span></button></div>
+  <div class="case__inner wrap">
+    <header class="case__head">
+      <p class="caption">Client · Rotterdam region, NL · 2026</p>
+      <h2 class="h2" id="caseBeboTitle">A specialist trade, and a request form that asks the <em>right questions</em>.</h2>
+      <p>BEBO drills and saws through concrete. Every job needs the same handful of facts before it can be quoted, and every one of them used to be collected by phone.</p>
+    </header>
+    <dl class="case__facts">
+      <div><dt>Role</dt><dd>Audit, SEO, development</dd></div>
+      <div><dt>Stack</dt><dd>Flask on Railway, Vercel, Web3Forms</dd></div>
+      <div><dt>Year</dt><dd>2026</dd></div>
+      <div><dt>Status</dt><dd>Live</dd></div>
+    </dl>
+    <div class="case__body">
+      <nav class="case__rail" data-rail aria-label="Chapters"></nav>
+      <div class="case__chapters">
+        <section id="bebo-problem"><h3><span class="n" aria-hidden="true">01</span>Problem</h3><p>The site worked but it was not earning anything. It ranked poorly against the other concrete drilling firms in the region, and it gave a potential customer no structured way to describe a job. <span class="todo">Confirm with the client: how requests arrived before, and roughly how many per month</span>.</p></section>
+        <section id="bebo-idea"><h3><span class="n" aria-hidden="true">02</span>Idea</h3><p>Two separate problems, two separate fixes. Make the existing site findable and technically sound, and give the company a dedicated intake form that collects a complete job description in one pass instead of three phone calls.</p></section>
+        <section id="bebo-process"><h3><span class="n" aria-hidden="true">03</span>Process</h3><ul><li>Full audit of the existing Flask application</li><li>Competitive research on concrete drilling firms in the Rotterdam region</li><li>SEO infrastructure: structure, metadata, indexing</li><li>Intake form designed around what the office needs to quote</li></ul></section>
+        <section id="bebo-design"><h3><span class="n" aria-hidden="true">04</span>Design</h3><p>Trade sites are used on a phone, in a van, with one hand, sometimes in gloves. Large targets, short fields, no decoration competing with the form. The site also carries a reusable maker ident, a small signature element I can reuse across builds without it looking like a template.</p></section>
+        <section id="bebo-development"><h3><span class="n" aria-hidden="true">05</span>Development</h3><p>The main site runs on Flask, deployed to Railway. The intake form ships separately as a static page on Vercel with Web3Forms handling delivery, so it has no server to maintain, no database to secure and nothing that can go down independently of the main site.</p></section>
+        <section id="bebo-challenges"><h3><span class="n" aria-hidden="true">06</span>Challenges</h3><p>Deciding what not to build. A full quotation system was possible, but a company that quotes on site does not need one, and it would have added a maintenance burden for a workflow that already works. The form stops exactly where the human takes over.</p></section>
+        <section id="bebo-solution"><h3><span class="n" aria-hidden="true">07</span>Solution</h3><p>An audited and SEO ready main site, plus a standalone intake form live at bebointake.vercel.app that arrives in the inbox as a complete, structured request.</p></section>
+        <section id="bebo-result"><h3><span class="n" aria-hidden="true">08</span>Result</h3><p><span class="todo">To be filled once the client reports back: requests received through the form, time saved per request, ranking change</span>. The form is live and in use.</p></section>
+      </div>
+    </div>
+    <div class="case__foot">
+      <a class="btn btn--ghost" href="https://bebointake.vercel.app" target="_blank" rel="noopener">Open the intake form <span class="arw" aria-hidden="true">&rarr;</span></a>
+      <a class="link" href="#contact" data-close>Fix an intake process</a>
+    </div>
+  </div>
+</article>
+
+</div>
+
+<!-- COMMAND PALETTE ----------------------------------------- -->
+<div class="palette" id="palette" data-open="false" role="dialog" aria-modal="true" aria-label="Command palette">
+  <div class="palette__box">
+    <input class="palette__input" id="paletteInput" type="text" role="combobox" aria-autocomplete="list" aria-expanded="true" aria-controls="paletteList" placeholder="Go to, or open a case study" autocomplete="off" spellcheck="false">
+    <ul class="palette__list" id="paletteList" role="listbox" aria-label="Commands"></ul>
+    <div class="palette__foot"><span>&uarr; &darr; navigate</span><span>&crarr; open</span><span>esc close</span></div>
+  </div>
+</div>
+
+<script type="module">
+/* ============================================================
+   Joris VRR. No dependencies.
+   Edit CONFIG and nothing else changes shape.
+   ============================================================ */
+
+const CONFIG = {
+  email:    "joris@jorisvrr.com",              // TODO confirm the address you actually read
+  github:   "https://github.com/jorisrijn-hash", // TODO confirm which handle is public facing
+  linkedin: "",                                  // leave empty to hide the LinkedIn links
+  base:     "Leiden, NL",
+  timeZone: "Europe/Amsterdam",
+  nowBuilding: "CORTEX",
+  lastShipped: "Atelier",
+  status:   "Taking new projects"
+};
+
+const root = document.documentElement;
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const $  = (s, c = document) => c.querySelector(s);
+const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
+
+/* --- loader ------------------------------------------------ */
+(function loader(){
+  const MIN = reduced ? 0 : 700, MAX = 1300;
+  const start = performance.now();
+  const done = () => {
+    const wait = Math.max(0, MIN - (performance.now() - start));
+    setTimeout(() => {
+      root.classList.remove("loading");
+      setTimeout(() => $("#loader")?.remove(), 800);
+    }, wait);
+  };
+  const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
+  Promise.race([fonts, new Promise(r => setTimeout(r, MAX))]).then(done).catch(done);
+})();
+
+/* --- scroll locking ---------------------------------------- */
+const locks = new Set();
+const background = () => [document.querySelector("main"), document.querySelector(".footer")].filter(Boolean);
+function lock(id){
+  locks.add(id);
+  document.body.style.overflow = "hidden";
+  if (id !== "palette") background().forEach(el => el.inert = true);
+}
+function unlock(id){
+  locks.delete(id);
+  if (!locks.size){ document.body.style.overflow = ""; background().forEach(el => el.inert = false); }
+}
+
+/* --- header ------------------------------------------------ */
+(function header(){
+  const el = $("#header");
+  let last = 0;
+  const onScroll = () => {
+    const y = window.scrollY;
+    el.dataset.stuck = y > 24;
+    el.dataset.hidden = y > 420 && y > last && !locks.size;
+    last = y;
+  };
+  addEventListener("scroll", onScroll, { passive:true });
+  onScroll();
+})();
+
+/* --- mobile sheet ------------------------------------------ */
+(function sheet(){
+  const el = $("#sheet"), btn = $("#burger"), close = $("#sheetClose");
+  const set = open => {
+    el.dataset.open = open;
+    btn.setAttribute("aria-expanded", open);
+    open ? lock("sheet") : unlock("sheet");
+    if (open) close.focus(); else btn.focus();
+  };
+  btn.addEventListener("click", () => set(true));
+  close.addEventListener("click", () => set(false));
+  $$("a", el).forEach(a => a.addEventListener("click", () => set(false)));
+  addEventListener("keydown", e => { if (e.key === "Escape" && el.dataset.open === "true") set(false); });
+})();
+
+/* --- reveals ----------------------------------------------- */
+(function reveals(){
+  const items = $$(".rv");
+  if (reduced || !("IntersectionObserver" in window)){ items.forEach(i => i.classList.add("in")); return; }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { rootMargin: "0px 0px -12% 0px", threshold: 0.08 });
+  items.forEach(i => io.observe(i));
+})();
+
+/* --- live status frame ------------------------------------- */
+(function status(){
+  const clock = $("#clock");
+  const tick = () => {
+    clock.textContent = new Intl.DateTimeFormat("en-GB", {
+      hour:"2-digit", minute:"2-digit", timeZone: CONFIG.timeZone
+    }).format(new Date());
+  };
+  tick(); setInterval(tick, 20000);
+  $("#fBase").textContent = CONFIG.base;
+  $("#fNow").textContent = CONFIG.nowBuilding;
+  $("#fLast").textContent = CONFIG.lastShipped;
+  $("#fStatus").textContent = CONFIG.status;
+  $("#year").textContent = new Date().getFullYear();
+})();
+
+/* --- contact links ----------------------------------------- */
+(function links(){
+  const mail = "mailto:" + CONFIG.email;
+  [["#linkMail", mail, CONFIG.email, "#mailText"], ["#fMail", mail, null, null]].forEach(([sel, href]) => {
+    const el = $(sel); if (el) el.href = href;
+  });
+  $("#mailText").textContent = CONFIG.email;
+
+  const gh = CONFIG.github;
+  if (gh){
+    $("#linkGh").href = gh; $("#fGh").href = gh;
+    $("#ghText").textContent = gh.replace(/^https?:\/\//, "");
+  } else { $("#linkGh").remove(); $("#fGh").remove(); }
+
+  const li = CONFIG.linkedin;
+  if (li){
+    $("#linkLi").href = li; $("#fLi").href = li;
+    $("#liText").textContent = li.replace(/^https?:\/\//, "");
+  } else { $("#linkLi").remove(); $("#fLi").remove(); }
+})();
+
+/* --- case panels ------------------------------------------- */
+const cases = (function caseView(){
+  const panels = $$(".case");
+  let openId = null, lastFocus = null;
+
+  panels.forEach(panel => {
+    // build the chapter rail from the chapters themselves
+    const rail = $("[data-rail]", panel);
+    const chapters = $$(".case__chapters section", panel);
+    if (rail){
+      rail.innerHTML = chapters.map(s => {
+        const h = $("h3", s);
+        const n = $(".n", h)?.textContent ?? "";
+        const t = h.textContent.replace(n, "").trim();
+        return `<a href="#${s.id}"><span class="n" aria-hidden="true">${n}</span>${t}</a>`;
+      }).join("");
+    }
+    // scroll spy inside the panel
+    if (!reduced && "IntersectionObserver" in window){
+      const railLinks = $$("a", rail);
+      const spy = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          railLinks.forEach(a => a.setAttribute("aria-current", a.getAttribute("href") === "#" + e.target.id));
+        });
+      }, { root: panel, rootMargin: "-20% 0px -70% 0px" });
+      chapters.forEach(c => spy.observe(c));
+    }
+    $$("[data-close]", panel).forEach(b => b.addEventListener("click", (e) => {
+      if (b.tagName === "A"){ e.preventDefault(); close(); location.hash = "#contact"; }
+      else close();
+    }));
+  });
+
+  function open(id){
+    const panel = document.querySelector(`.case[data-panel="${id}"]`);
+    if (!panel) return;
+    lastFocus = document.activeElement;
+    panel.dataset.open = "true";
+    panel.scrollTop = 0;
+    openId = id;
+    lock("case");
+    history.replaceState(null, "", "#case-" + id);
+    $(".case__close", panel).focus({ preventScroll:true });
+  }
+  function close(){
+    if (!openId) return;
+    const panel = document.querySelector(`.case[data-panel="${openId}"]`);
+    panel.dataset.open = "false";
+    openId = null;
+    unlock("case");
+    history.replaceState(null, "", location.pathname + location.search);
+    lastFocus?.focus({ preventScroll:true });
+  }
+
+  $$("[data-case]").forEach(a => a.addEventListener("click", e => { e.preventDefault(); open(a.dataset.case); }));
+  addEventListener("keydown", e => { if (e.key === "Escape" && openId) close(); });
+
+  const m = location.hash.match(/^#case-([a-z]+)$/);
+  if (m) addEventListener("load", () => open(m[1]), { once:true });
+
+  return { open, close, get openId(){ return openId; } };
+})();
+
+/* --- command palette --------------------------------------- */
+(function palette(){
+  const box = $("#palette"), input = $("#paletteInput"), list = $("#paletteList");
+  const isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
+  $("#kbdKey").textContent = isMac ? "\u2318" : "Ctrl";
+
+  const items = [
+    { label:"Work",        hint:"section", run:() => go("#work") },
+    { label:"About",       hint:"section", run:() => go("#about") },
+    { label:"How I build", hint:"section", run:() => go("#process") },
+    { label:"Services",    hint:"section", run:() => go("#services") },
+    { label:"Tools",       hint:"section", run:() => go("#stack") },
+    { label:"Lab",         hint:"section", run:() => go("#lab") },
+    { label:"Contact",     hint:"section", run:() => go("#contact") },
+    { label:"Case: ATS Valkenburg", hint:"case", run:() => cases.open("ats") },
+    { label:"Case: Halo",           hint:"case", run:() => cases.open("halo") },
+    { label:"Case: CORTEX",         hint:"case", run:() => cases.open("cortex") },
+    { label:"Case: Atelier",        hint:"case", run:() => cases.open("atelier") },
+    { label:"Case: BEBO Betonboren",hint:"case", run:() => cases.open("bebo") },
+    { label:"Email Joris",  hint:"action", run:() => location.href = "mailto:" + CONFIG.email },
+    { label:"Copy email address", hint:"action", run:() => navigator.clipboard?.writeText(CONFIG.email) }
+  ];
+  if (CONFIG.github)   items.push({ label:"GitHub",   hint:"external", run:() => window.open(CONFIG.github, "_blank", "noopener") });
+  if (CONFIG.linkedin) items.push({ label:"LinkedIn", hint:"external", run:() => window.open(CONFIG.linkedin, "_blank", "noopener") });
+
+  let shown = items, active = 0;
+  const go = (hash) => { close(); document.querySelector(hash)?.scrollIntoView({ behavior: reduced ? "auto" : "smooth" }); };
+
+  function render(){
+    list.innerHTML = shown.length
+      ? shown.map((it, i) => `<li role="option" data-active="${i === active}" aria-selected="${i === active}"><button type="button" data-i="${i}">${it.label}<span class="k">${it.hint}</span></button></li>`).join("")
+      : `<li class="palette__empty">Nothing matches that.</li>`;
+  }
+  function filter(q){
+    const s = q.trim().toLowerCase();
+    shown = s ? items.filter(i => i.label.toLowerCase().includes(s)) : items;
+    active = 0; render();
+  }
+  function open(){
+    if (cases.openId) return;
+    box.dataset.open = "true"; lock("palette");
+    input.value = ""; filter(""); input.focus();
+  }
+  function close(){ box.dataset.open = "false"; unlock("palette"); }
+
+  $("#paletteOpen").addEventListener("click", open);
+  input.addEventListener("input", () => filter(input.value));
+  list.addEventListener("click", e => {
+    const b = e.target.closest("button[data-i]"); if (!b) return;
+    shown[Number(b.dataset.i)]?.run();
+  });
+  box.addEventListener("mousedown", e => { if (e.target === box) close(); });
+
+  addEventListener("keydown", e => {
+    const combo = (e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k";
+    if (combo){ e.preventDefault(); box.dataset.open === "true" ? close() : open(); return; }
+    if (box.dataset.open !== "true") return;
+    if (e.key === "Escape"){ e.preventDefault(); close(); }
+    else if (e.key === "ArrowDown"){ e.preventDefault(); active = Math.min(active + 1, shown.length - 1); render(); }
+    else if (e.key === "ArrowUp"){ e.preventDefault(); active = Math.max(active - 1, 0); render(); }
+    else if (e.key === "Enter"){ e.preventDefault(); shown[active]?.run(); }
+  });
+})();
+
+/* --- section highlighting in the nav ----------------------- */
+(function navSpy(){
+  const links = $$("[data-nav]");
+  if (!("IntersectionObserver" in window)) return;
+  const map = new Map(links.map(a => [a.getAttribute("href").slice(1), a]));
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      links.forEach(a => a.removeAttribute("aria-current"));
+      map.get(e.target.id)?.setAttribute("aria-current", "true");
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  map.forEach((_, id) => { const s = document.getElementById(id); if (s) io.observe(s); });
+})();
+
+/* --- brief form -------------------------------------------- */
+(function brief(){
+  const form = $("#brief"), msg = $("#formMsg");
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const name = (data.get("name") || "").toString().trim();
+    const email = (data.get("email") || "").toString().trim();
+    const details = (data.get("details") || "").toString().trim();
+
+    if (!name || !email || !details){
+      msg.textContent = "Name, email and a short description are needed to send this.";
+      form.elements.namedItem(!name ? "name" : !email ? "email" : "details").focus();
+      return;
+    }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+      msg.textContent = "That email address does not look complete.";
+      form.elements.namedItem("email").focus();
+      return;
+    }
+
+    const kind = data.get("kind");
+    const company = (data.get("company") || "").toString().trim();
+    const body = [
+      `Project type: ${kind}`,
+      `Name: ${name}`,
+      `Email: ${email}`,
+      company ? `Company: ${company}` : null,
+      "",
+      details
+    ].filter(Boolean).join("\n");
+
+    msg.textContent = "Opening your email app with the brief filled in.";
+    location.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent(`New project: ${kind}`)}&body=${encodeURIComponent(body)}`;
+  });
+})();
+</script>
+</body>
+</html>
